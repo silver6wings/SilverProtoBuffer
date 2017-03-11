@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 s.name         = "SILProtoBuffer"
 s.version      = "1.0.0"
-s.summary      = "Google Protobuffer v2.6 pods"
+s.summary      = "Google Protobuffer v2.6 that easy to use"
 
 s.cocoapods_version = '>= 1.0'
 
