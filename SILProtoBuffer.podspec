@@ -15,27 +15,27 @@ Pod::Spec.new do |s|
 
     s.requires_arc = true
 
-    s.source_files    = "SAFProtobuffer/*.{h,m}"
+    s.source_files    = "objective-c/SILProtobuffer/*.{h,m}"
 
     s.subspec 'AFNetworking' do |ss|
         ss.requires_arc = true
-        ss.source_files = "AFNetworking/**/*.{h,m}"
+        ss.source_files = "objective-c/AFNetworking/*.{h,m}"
     end
 
     s.subspec 'GoogleProtobuf' do |ss|
 
         ss.requires_arc = false
         ss.source_files = 'objective-c/GoogleProtobuf/*.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Any.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Api.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Duration.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Empty.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/FieldMask.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/SourceContext.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Struct.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Timestamp.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Type.pbobjc.{h,m}',
-                         'objective-c/GoogleProtobuf/protobuf/Wrappers.pbobjc.{h,m}'
+                          'objective-c/GoogleProtobuf/protobuf/Any.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/Api.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/Duration.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/Empty.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/FieldMask.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/SourceContext.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/Struct.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/Timestamp.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/Type.pbobjc.{h,m}',
+                          'objective-c/GoogleProtobuf/protobuf/Wrappers.pbobjc.{h,m}'
 
         ss.exclude_files = 'objective-c/GoogleProtobuf/GPBProtocolBuffers.m'
         # ss.user_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1' }
