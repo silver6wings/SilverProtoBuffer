@@ -11,7 +11,8 @@
 
 @implementation SILDataManager
 
-+ (GPBMessage *)dataToProto:(NSData *)data WithClassType:(Class)classType
++ (GPBMessage *)dataToProto:(NSData *)data
+              withClassType:(Class)classType
 {
     __kindof GPBMessage *object = nil;
     

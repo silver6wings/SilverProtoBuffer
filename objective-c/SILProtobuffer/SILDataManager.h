@@ -12,6 +12,7 @@
 
 @interface SILDataManager : NSObject
 
-+ (GPBMessage *)dataToProto:(NSData *)data WithClassType:(Class)classType;
++ (GPBMessage *)dataToProto:(NSData *)data
+              withClassType:(Class)classType;
 
 @end

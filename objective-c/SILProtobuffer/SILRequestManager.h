@@ -15,14 +15,14 @@
 @interface SILRequestManager : NSObject
 
 + (void)sendGPBWithMethod:(NSString *)method
-                   andTag:(NSString *)urlTag
+                   andTag:(NSString *)tag
                    andURL:(NSString *)url
             andGPBMessage:(__kindof GPBMessage *)gpb
           andResponseType:(Class)responseClass
         CompletionHandler:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler;
 
 + (void)sendGPBWithMethod:(NSString *)method
-                   andTag:(NSString *)urlTag
+                   andTag:(NSString *)tag
                    andURL:(NSString *)url
            andCachePolicy:(NSURLRequestCachePolicy)policy
             andGPBMessage:(__kindof GPBMessage *)gpb

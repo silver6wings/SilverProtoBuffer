@@ -12,38 +12,35 @@
 #import "AFNetworking.h"
 #import "GPBProtocolBuffers.h"
 
-@interface SILRequestManager ()
-
-@end
-
 @implementation SILRequestManager
 
 + (void)sendGPBWithMethod:(NSString *)method
-                   andTag:(NSString *)urlTag
+                   andTag:(NSString *)tag
                    andURL:(NSString *)url
             andGPBMessage:(__kindof GPBMessage *)gpb
           andResponseType:(Class)responseClass
         CompletionHandler:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
     [SILRequestManager sendGPBWithMethod:method
-                                  andTag:urlTag andURL:url
+                                  andTag:tag
+                                  andURL:url
                            andGPBMessage:gpb
                          andResponseType:responseClass
                        CompletionHandler:handler];
 }
 
 + (void)sendGPBWithMethod:(NSString *)method
-                   andTag:(NSString *)urlTag
+                   andTag:(NSString *)tag
                    andURL:(NSString *)url
            andCachePolicy:(NSURLRequestCachePolicy)policy
             andGPBMessage:(__kindof GPBMessage *)gpb
           andResponseType:(Class)responseClass
                completion:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler;
 {
-    AFHTTPSessionManager *manager = [SILManager instance].sessionManagerHTTP;
+    AFHTTPSessionManager *manager = [SILManager instance].sessionManager;
     manager.requestSerializer.cachePolicy = policy;
     
-    [[SILManager instance].requestDelegate willRequestAPIwithURL:url withTag:urlTag];
+    [[SILManager instance].requestDelegate willRequestAPIwithURL:url withTag:tag];
     
     if ([method isEqualToString:@"GET"])
     {
@@ -56,7 +53,7 @@
              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
              [SILRequestManager successFromRequestURL:url
-                                               andTag:urlTag
+                                               andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
                                            completion:handler];
@@ -64,7 +61,7 @@
              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
              [SILRequestManager failFromRequestURL:url
-                                            andTag:urlTag
+                                            andTag:tag
                                           andError:error
                                         completion:handler];
          }];
@@ -80,7 +77,7 @@
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
              [SILRequestManager successFromRequestURL:url
-                                               andTag:urlTag
+                                               andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
                                            completion:handler];
@@ -88,7 +85,7 @@
               failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
              [SILRequestManager failFromRequestURL:url
-                                            andTag:urlTag
+                                            andTag:tag
                                           andError:error
                                         completion:handler];
          }];
@@ -100,7 +97,7 @@
                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
              [SILRequestManager successFromRequestURL:url
-                                               andTag:urlTag
+                                               andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
                                            completion:handler];
@@ -108,7 +105,7 @@
                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
              [SILRequestManager failFromRequestURL:url
-                                            andTag:urlTag
+                                            andTag:tag
                                           andError:error
                                         completion:handler];
          }];
@@ -120,7 +117,7 @@
                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
              [SILRequestManager successFromRequestURL:url
-                                               andTag:urlTag
+                                               andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
                                            completion:handler];
@@ -128,7 +125,7 @@
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
              [SILRequestManager failFromRequestURL:url
-                                            andTag:urlTag
+                                            andTag:tag
                                           andError:error
                                         completion:handler];
          }];
@@ -141,23 +138,23 @@
 }
 
 + (void)successFromRequestURL:(NSString *)url
-                       andTag:(NSString *)urlTag
+                       andTag:(NSString *)tag
                   andResponse:(id)responseObject
               andResponseType:(Class)responseClass
               completion:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
-    [[SILManager instance].responseDelegate didResponsedFromAPIwithURL:url withTag:urlTag withResult:YES];
+    [[SILManager instance].responseDelegate didResponsedFromAPIwithURL:url withTag:tag withResult:YES];
     
-    __kindof GPBMessage *object = [SILDataManager dataToProto:responseObject WithClassType:responseClass];
+    __kindof GPBMessage *object = [SILDataManager dataToProto:responseObject withClassType:responseClass];
     handler(object, SILResponseCodeSuccess, nil);
 }
 
 + (void)failFromRequestURL:(NSString *)url
-                    andTag:(NSString *)urlTag
+                    andTag:(NSString *)tag
                   andError:(NSError *)error
               completion:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
-    [[SILManager instance].responseDelegate didResponsedFromAPIwithURL:url withTag:urlTag withResult:NO];
+    [[SILManager instance].responseDelegate didResponsedFromAPIwithURL:url withTag:tag withResult:NO];
     handler(nil, SILResponseCodeFail, error);
 }
 

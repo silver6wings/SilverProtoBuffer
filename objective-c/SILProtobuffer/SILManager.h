@@ -16,7 +16,7 @@
 @property (nonatomic, weak) id <SILRequestDelegate> requestDelegate;
 @property (nonatomic, weak) id <SILResponseDelegate> responseDelegate;
 
-@property (nonatomic, strong, readonly) AFHTTPSessionManager *sessionManagerHTTP;
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 
 + (instancetype)instance;
 
