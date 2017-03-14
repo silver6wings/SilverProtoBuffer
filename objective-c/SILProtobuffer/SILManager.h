@@ -11,7 +11,7 @@
 
 @class AFHTTPSessionManager;
 
-@interface SILManager : NSObject
+@interface SILManager : NSObject <SILManagerDelegate>
 
 @property (nonatomic, weak) id <SILRequestDelegate> requestDelegate;
 @property (nonatomic, weak) id <SILResponseDelegate> responseDelegate;
