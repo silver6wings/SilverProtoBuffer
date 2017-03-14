@@ -1,3 +1,7 @@
+==========================================================
+= From Google Protobuf
+==========================================================
+
 This license applies to all parts of Protocol Buffers except the following:
 
   - Atomicops support for generic gcc, located in
@@ -42,10 +46,11 @@ standalone and requires a support library to be linked with it.  This
 support library is itself covered by the above license.
 
 ==========================================================
-
+= From Silver ProtoBuffer Framework
+==========================================================
 MIT License
 
-Copyright (c) 2017 juncyu
+Copyright (c) 2017 junchao
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
