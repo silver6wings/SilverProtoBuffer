@@ -6,22 +6,22 @@
 //  Copyright © 2017年 silver6wings. All rights reserved.
 //
 
-#import "SILRequestManager.h"
+#import "SILRequester.h"
 #import "SILManager.h"
 #import "SILDataManager.h"
 #import "AFNetworking.h"
 #import "GPBProtocolBuffers.h"
 
-@implementation SILRequestManager
+@implementation SILRequester
 
-+ (void)sendGPBWithMethod:(NSString *)method
++ (void)requestWithMethod:(NSString *)method
                    andTag:(NSString *)tag
                    andURL:(NSString *)url
             andGPBMessage:(__kindof GPBMessage *)gpb
           andResponseType:(Class)responseClass
         CompletionHandler:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
-    [SILRequestManager sendGPBWithMethod:method
+    [SILRequester requestWithMethod:method
                                   andTag:tag
                                   andURL:url
                            andGPBMessage:gpb
@@ -29,7 +29,7 @@
                        CompletionHandler:handler];
 }
 
-+ (void)sendGPBWithMethod:(NSString *)method
++ (void)requestWithMethod:(NSString *)method
                    andTag:(NSString *)tag
                    andURL:(NSString *)url
            andCachePolicy:(NSURLRequestCachePolicy)policy
@@ -52,7 +52,7 @@
          }
              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
-             [SILRequestManager successFromRequestURL:url
+             [SILRequester successFromRequestURL:url
                                                andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
@@ -60,7 +60,7 @@
          }
              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
-             [SILRequestManager failFromRequestURL:url
+             [SILRequester failFromRequestURL:url
                                             andTag:tag
                                           andError:error
                                         completion:handler];
@@ -76,7 +76,7 @@
          }
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
-             [SILRequestManager successFromRequestURL:url
+             [SILRequester successFromRequestURL:url
                                                andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
@@ -84,7 +84,7 @@
          }
               failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
-             [SILRequestManager failFromRequestURL:url
+             [SILRequester failFromRequestURL:url
                                             andTag:tag
                                           andError:error
                                         completion:handler];
@@ -96,7 +96,7 @@
             parameters:[gpb data]
                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
-             [SILRequestManager successFromRequestURL:url
+             [SILRequester successFromRequestURL:url
                                                andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
@@ -104,7 +104,7 @@
          }
                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
-             [SILRequestManager failFromRequestURL:url
+             [SILRequester failFromRequestURL:url
                                             andTag:tag
                                           andError:error
                                         completion:handler];
@@ -116,7 +116,7 @@
              parameters:[gpb data]
                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
          {
-             [SILRequestManager successFromRequestURL:url
+             [SILRequester successFromRequestURL:url
                                                andTag:tag
                                           andResponse:responseObject
                                       andResponseType:responseClass
@@ -124,7 +124,7 @@
          }
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
          {
-             [SILRequestManager failFromRequestURL:url
+             [SILRequester failFromRequestURL:url
                                             andTag:tag
                                           andError:error
                                         completion:handler];

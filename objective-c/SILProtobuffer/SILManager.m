@@ -46,6 +46,5 @@
     return manager;
 }
 
-// put generated code here
 
 @end

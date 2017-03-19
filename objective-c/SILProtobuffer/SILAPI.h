@@ -32,9 +32,3 @@ typedef NS_ENUM(NSUInteger, SILResponseCode)
 - (void)didResponsedFromAPIwithURL:(NSString *)URL withTag:(NSString *)tag withResult:(BOOL)success;
 
 @end
-
-@protocol SILManagerDelegate <NSObject>
-
-// put generated code here
-
-@end

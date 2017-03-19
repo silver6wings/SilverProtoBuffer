@@ -12,16 +12,16 @@
 @class GPBInt64Array;
 @class GPBMessage;
 
-@interface SILRequestManager : NSObject
+@interface SILRequester : NSObject
 
-+ (void)sendGPBWithMethod:(NSString *)method
++ (void)requestWithMethod:(NSString *)method
                    andTag:(NSString *)tag
                    andURL:(NSString *)url
             andGPBMessage:(__kindof GPBMessage *)gpb
           andResponseType:(Class)responseClass
         CompletionHandler:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler;
 
-+ (void)sendGPBWithMethod:(NSString *)method
++ (void)requestWithMethod:(NSString *)method
                    andTag:(NSString *)tag
                    andURL:(NSString *)url
            andCachePolicy:(NSURLRequestCachePolicy)policy
