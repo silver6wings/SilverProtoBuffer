@@ -8,7 +8,7 @@
 
 #import "SILRequester.h"
 #import "SILManager.h"
-#import "SILDataManager.h"
+#import "SILDataParser.h"
 #import "AFNetworking.h"
 #import "GPBProtocolBuffers.h"
 
@@ -145,7 +145,7 @@
 {
     [[SILManager instance].responseDelegate didResponsedFromAPIwithURL:url withTag:tag withResult:YES];
     
-    __kindof GPBMessage *object = [SILDataManager dataToProto:responseObject withClassType:responseClass];
+    __kindof GPBMessage *object = [SILDataParser dataToModel:responseObject withClassType:responseClass];
     handler(object, SILResponseCodeSuccess, nil);
 }
 

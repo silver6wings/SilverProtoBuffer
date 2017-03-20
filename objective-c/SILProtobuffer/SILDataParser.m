@@ -6,12 +6,12 @@
 //  Copyright © 2017年 silver6wings. All rights reserved.
 //
 
-#import "SILDataManager.h"
+#import "SILDataParser.h"
 #import "GPBProtocolBuffers.h"
 
-@implementation SILDataManager
+@implementation SILDataParser
 
-+ (GPBMessage *)dataToProto:(NSData *)data
++ (GPBMessage *)dataToModel:(NSData *)data
               withClassType:(Class)classType
 {
     __kindof GPBMessage *object = nil;

@@ -11,7 +11,6 @@
 #define BASE_URL            @"http://api.zhushou.youhujia.com"
 
 #define CONTENT_PROTOBUF    @"application/x-protobuf"
-#define CONTENT_JSON        @"application/json"
 #define REQUEST_TIMOUT      (10.0f)
 
 typedef NS_ENUM(NSUInteger, SILResponseCode)
