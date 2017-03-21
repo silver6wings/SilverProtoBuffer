@@ -6,15 +6,15 @@
 //  Copyright © 2017年 silver6wings. All rights reserved.
 //
 
-#import "SILRequester.h"
 #import "SILManager.h"
-#import "SILDataManager.h"
+#import "SILParser.h"
+#import "SILRequester.h"
 #import "AFNetworking.h"
-#import "GPBProtocolBuffers.h"
+#import "GPBMessage.h"
 
 @implementation SILRequester
 
-+ (void)requestWithMethod:(NSString *)method
++ (void)requestWithMethod:(SILRequestMethod)method
                    andTag:(NSString *)tag
                    andURL:(NSString *)url
             andGPBMessage:(__kindof GPBMessage *)gpb
@@ -22,14 +22,15 @@
         CompletionHandler:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
     [SILRequester requestWithMethod:method
-                                  andTag:tag
-                                  andURL:url
-                           andGPBMessage:gpb
-                         andResponseType:responseClass
-                       CompletionHandler:handler];
+                             andTag:tag
+                             andURL:url
+                     andCachePolicy:NSURLRequestUseProtocolCachePolicy
+                      andGPBMessage:gpb
+                    andResponseType:responseClass
+                         completion:handler];
 }
 
-+ (void)requestWithMethod:(NSString *)method
++ (void)requestWithMethod:(SILRequestMethod)method
                    andTag:(NSString *)tag
                    andURL:(NSString *)url
            andCachePolicy:(NSURLRequestCachePolicy)policy
@@ -40,100 +41,134 @@
     AFHTTPSessionManager *manager = [SILManager instance].sessionManager;
     manager.requestSerializer.cachePolicy = policy;
     
-    [[SILManager instance].requestDelegate willRequestAPIwithURL:url withTag:tag];
+    [[SILManager instance].requestDelegate willRequestToURL:url withTag:tag];
     
-    if ([method isEqualToString:@"GET"])
+    switch (method)
     {
-        [manager GET:url
-          parameters:[gpb data]
-            progress:^(NSProgress * _Nonnull downloadProgress)
-         {
-             handler(nil, SILResponseCodeProcess, nil);
-         }
-             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-         {
-             [SILRequester successFromRequestURL:url
-                                               andTag:tag
-                                          andResponse:responseObject
-                                      andResponseType:responseClass
-                                           completion:handler];
-         }
-             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
-         {
-             [SILRequester failFromRequestURL:url
-                                            andTag:tag
-                                          andError:error
-                                        completion:handler];
-         }];
-    }
-    else if ([method isEqualToString:@"POST"])
-    {
-        [manager POST:url
-           parameters:[gpb data]
-             progress:^(NSProgress * _Nonnull downloadProgress)
-         {
-             handler(nil, SILResponseCodeProcess, nil);
-         }
-              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-         {
-             [SILRequester successFromRequestURL:url
-                                               andTag:tag
-                                          andResponse:responseObject
-                                      andResponseType:responseClass
-                                           completion:handler];
-         }
-              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
-         {
-             [SILRequester failFromRequestURL:url
-                                            andTag:tag
-                                          andError:error
-                                        completion:handler];
-         }];
-    }
-    else if ([method isEqualToString:@"PATCH"])
-    {
-        [manager PATCH:url
-            parameters:[gpb data]
-               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-         {
-             [SILRequester successFromRequestURL:url
-                                               andTag:tag
-                                          andResponse:responseObject
-                                      andResponseType:responseClass
-                                           completion:handler];
-         }
-               failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
-         {
-             [SILRequester failFromRequestURL:url
-                                            andTag:tag
-                                          andError:error
-                                        completion:handler];
-         }];
-    }
-    else if ([method isEqualToString:@"DELETE"])
-    {
-        [manager DELETE:url
-             parameters:[gpb data]
-                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-         {
-             [SILRequester successFromRequestURL:url
-                                               andTag:tag
-                                          andResponse:responseObject
-                                      andResponseType:responseClass
-                                           completion:handler];
-         }
-                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
-         {
-             [SILRequester failFromRequestURL:url
-                                            andTag:tag
-                                          andError:error
-                                        completion:handler];
-         }];
-    }
-    else
-    {
-        NSLog(@"不支持HTTP方法名:%@ %@", method, url);
-        @throw NSGenericException;
+        case SILRequestMethodGET:
+        {
+            [manager GET:url
+              parameters:[gpb data]
+                progress:^(NSProgress * _Nonnull downloadProgress)
+             {
+                 handler(nil, SILResponseCodeProcess, nil);
+             }
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+             {
+                 [SILRequester successFromRequestURL:url
+                                              andTag:tag
+                                         andResponse:responseObject
+                                     andResponseType:responseClass
+                                          completion:handler];
+             }
+                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+             {
+                 [SILRequester failFromRequestURL:url
+                                           andTag:tag
+                                         andError:error
+                                       completion:handler];
+             }];
+        }
+            break;
+            
+        case SILRequestMethodPOST:
+        {
+            [manager POST:url
+               parameters:[gpb data]
+                 progress:^(NSProgress * _Nonnull downloadProgress)
+             {
+                 handler(nil, SILResponseCodeProcess, nil);
+             }
+                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+             {
+                 [SILRequester successFromRequestURL:url
+                                              andTag:tag
+                                         andResponse:responseObject
+                                     andResponseType:responseClass
+                                          completion:handler];
+             }
+                  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+             {
+                 [SILRequester failFromRequestURL:url
+                                           andTag:tag
+                                         andError:error
+                                       completion:handler];
+             }];
+        }
+            break;
+            
+        case SILRequestMethodPUT:
+        {
+            [manager PUT:url
+              parameters:[gpb data]
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+             {
+                 [SILRequester successFromRequestURL:url
+                                              andTag:tag
+                                         andResponse:responseObject
+                                     andResponseType:responseClass
+                                          completion:handler];
+             }
+                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+             {
+                 [SILRequester failFromRequestURL:url
+                                           andTag:tag
+                                         andError:error
+                                       completion:handler];
+             }];
+        }
+            break;
+            
+        case SILRequestMethodPATCH:
+        {
+            [manager PATCH:url
+                parameters:[gpb data]
+                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+             {
+                 [SILRequester successFromRequestURL:url
+                                              andTag:tag
+                                         andResponse:responseObject
+                                     andResponseType:responseClass
+                                          completion:handler];
+             }
+                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+             {
+                 [SILRequester failFromRequestURL:url
+                                           andTag:tag
+                                         andError:error
+                                       completion:handler];
+             }];
+        }
+            break;
+            
+        case SILRequestMethodDELETE:
+        {
+            [manager DELETE:url
+                 parameters:[gpb data]
+                    success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+             {
+                 [SILRequester successFromRequestURL:url
+                                              andTag:tag
+                                         andResponse:responseObject
+                                     andResponseType:responseClass
+                                          completion:handler];
+             }
+                    failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+             {
+                 [SILRequester failFromRequestURL:url
+                                           andTag:tag
+                                         andError:error
+                                       completion:handler];
+             }];
+        }
+            break;
+            
+        default:
+        {
+            NSLog(@"Not supported HTTP method:%lu %@", method, url);
+            @throw NSGenericException;
+        }
+            break;
     }
 }
 
@@ -143,9 +178,12 @@
               andResponseType:(Class)responseClass
               completion:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
-    [[SILManager instance].responseDelegate didResponsedFromAPIwithURL:url withTag:tag withResult:YES];
+    [[SILManager instance].responseDelegate didResponsedFromURL:url withTag:tag withResult:YES];
     
-    __kindof GPBMessage *object = [SILDataManager dataToProto:responseObject withClassType:responseClass];
+    NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", string);
+    
+    __kindof GPBMessage *object = [SILParser dataToModel:responseObject withClassType:responseClass];
     handler(object, SILResponseCodeSuccess, nil);
 }
 
@@ -154,7 +192,7 @@
                   andError:(NSError *)error
               completion:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
-    [[SILManager instance].responseDelegate didResponsedFromAPIwithURL:url withTag:tag withResult:NO];
+    [[SILManager instance].responseDelegate didResponsedFromURL:url withTag:tag withResult:NO];
     handler(nil, SILResponseCodeFail, error);
 }
 

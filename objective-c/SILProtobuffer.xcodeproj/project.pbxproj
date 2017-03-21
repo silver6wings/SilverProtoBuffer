@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19B365FA1E7E9C5D00C72246 /* SILManager+Sample.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B365F91E7E9C5D00C72246 /* SILManager+Sample.m */; };
 		4D44C2191E77C52500E3477F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C20D1E77C52500E3477F /* AFHTTPSessionManager.m */; };
 		4D44C21A1E77C52500E3477F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C2101E77C52500E3477F /* AFNetworkReachabilityManager.m */; };
 		4D44C21B1E77C52500E3477F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C2121E77C52500E3477F /* AFSecurityPolicy.m */; };
@@ -38,10 +37,9 @@
 		4D44C2741E77C53600E3477F /* Timestamp.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C25A1E77C53600E3477F /* Timestamp.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D44C2751E77C53600E3477F /* Type.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C25C1E77C53600E3477F /* Type.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4D44C2761E77C53600E3477F /* Wrappers.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C25E1E77C53600E3477F /* Wrappers.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4D44C2791E77C63700E3477F /* SILRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C2781E77C63700E3477F /* SILRequester.m */; };
-		4D44C27C1E77C68200E3477F /* SILManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C27B1E77C68200E3477F /* SILManager.m */; };
-		4D44C2801E77CD7A00E3477F /* SILDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44C27F1E77CD7A00E3477F /* SILDataManager.m */; };
-		4D4F1F331E72A73300FBBBA3 /* SILProtobuffer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4D4F1F301E72A73300FBBBA3 /* SILProtobuffer.h */; };
+		4DF3B4551E80E10A00E25F82 /* SILManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3B44F1E80E10A00E25F82 /* SILManager.m */; };
+		4DF3B4561E80E10A00E25F82 /* SILParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3B4511E80E10A00E25F82 /* SILParser.m */; };
+		4DF3B4571E80E10A00E25F82 /* SILRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3B4541E80E10A00E25F82 /* SILRequester.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,15 +49,12 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				4D4F1F331E72A73300FBBBA3 /* SILProtobuffer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		19B365F81E7E9C5D00C72246 /* SILManager+Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SILManager+Sample.h"; sourceTree = "<group>"; };
-		19B365F91E7E9C5D00C72246 /* SILManager+Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SILManager+Sample.m"; sourceTree = "<group>"; };
 		4D44C20C1E77C52500E3477F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		4D44C20D1E77C52500E3477F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		4D44C20E1E77C52500E3477F /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -135,15 +130,15 @@
 		4D44C25C1E77C53600E3477F /* Type.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type.pbobjc.m; sourceTree = "<group>"; };
 		4D44C25D1E77C53600E3477F /* Wrappers.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrappers.pbobjc.h; sourceTree = "<group>"; };
 		4D44C25E1E77C53600E3477F /* Wrappers.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wrappers.pbobjc.m; sourceTree = "<group>"; };
-		4D44C2771E77C63700E3477F /* SILRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILRequester.h; sourceTree = "<group>"; };
-		4D44C2781E77C63700E3477F /* SILRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SILRequester.m; sourceTree = "<group>"; };
-		4D44C27A1E77C68200E3477F /* SILManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILManager.h; sourceTree = "<group>"; };
-		4D44C27B1E77C68200E3477F /* SILManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SILManager.m; sourceTree = "<group>"; };
-		4D44C27D1E77C8DB00E3477F /* SILAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILAPI.h; sourceTree = "<group>"; };
-		4D44C27E1E77CD7A00E3477F /* SILDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILDataManager.h; sourceTree = "<group>"; };
-		4D44C27F1E77CD7A00E3477F /* SILDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SILDataManager.m; sourceTree = "<group>"; };
 		4D4F1F2D1E72A73300FBBBA3 /* libSILProtobuffer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSILProtobuffer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D4F1F301E72A73300FBBBA3 /* SILProtobuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SILProtobuffer.h; sourceTree = "<group>"; };
+		4DF3B44D1E80E10A00E25F82 /* SILAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILAPI.h; sourceTree = "<group>"; };
+		4DF3B44E1E80E10A00E25F82 /* SILManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILManager.h; sourceTree = "<group>"; };
+		4DF3B44F1E80E10A00E25F82 /* SILManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SILManager.m; sourceTree = "<group>"; };
+		4DF3B4501E80E10A00E25F82 /* SILParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILParser.h; sourceTree = "<group>"; };
+		4DF3B4511E80E10A00E25F82 /* SILParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SILParser.m; sourceTree = "<group>"; };
+		4DF3B4521E80E10A00E25F82 /* SILProtobuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILProtobuffer.h; sourceTree = "<group>"; };
+		4DF3B4531E80E10A00E25F82 /* SILRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SILRequester.h; sourceTree = "<group>"; };
+		4DF3B4541E80E10A00E25F82 /* SILRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SILRequester.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,16 +270,14 @@
 		4D4F1F2F1E72A73300FBBBA3 /* SILProtobuffer */ = {
 			isa = PBXGroup;
 			children = (
-				4D4F1F301E72A73300FBBBA3 /* SILProtobuffer.h */,
-				4D44C27D1E77C8DB00E3477F /* SILAPI.h */,
-				4D44C27A1E77C68200E3477F /* SILManager.h */,
-				4D44C27B1E77C68200E3477F /* SILManager.m */,
-				19B365F81E7E9C5D00C72246 /* SILManager+Sample.h */,
-				19B365F91E7E9C5D00C72246 /* SILManager+Sample.m */,
-				4D44C2771E77C63700E3477F /* SILRequester.h */,
-				4D44C2781E77C63700E3477F /* SILRequester.m */,
-				4D44C27E1E77CD7A00E3477F /* SILDataManager.h */,
-				4D44C27F1E77CD7A00E3477F /* SILDataManager.m */,
+				4DF3B4521E80E10A00E25F82 /* SILProtobuffer.h */,
+				4DF3B44D1E80E10A00E25F82 /* SILAPI.h */,
+				4DF3B44E1E80E10A00E25F82 /* SILManager.h */,
+				4DF3B44F1E80E10A00E25F82 /* SILManager.m */,
+				4DF3B4501E80E10A00E25F82 /* SILParser.h */,
+				4DF3B4511E80E10A00E25F82 /* SILParser.m */,
+				4DF3B4531E80E10A00E25F82 /* SILRequester.h */,
+				4DF3B4541E80E10A00E25F82 /* SILRequester.m */,
 			);
 			path = SILProtobuffer;
 			sourceTree = "<group>";
@@ -356,14 +349,13 @@
 				4D44C2651E77C53600E3477F /* GPBExtensionRegistry.m in Sources */,
 				4D44C2721E77C53600E3477F /* SourceContext.pbobjc.m in Sources */,
 				4D44C2621E77C53600E3477F /* GPBDescriptor.m in Sources */,
-				4D44C27C1E77C68200E3477F /* SILManager.m in Sources */,
 				4D44C2641E77C53600E3477F /* GPBExtensionInternals.m in Sources */,
 				4D44C21E1E77C52500E3477F /* AFURLSessionManager.m in Sources */,
 				4D44C21B1E77C52500E3477F /* AFSecurityPolicy.m in Sources */,
 				4D44C21A1E77C52500E3477F /* AFNetworkReachabilityManager.m in Sources */,
-				4D44C2801E77CD7A00E3477F /* SILDataManager.m in Sources */,
 				4D44C2731E77C53600E3477F /* Struct.pbobjc.m in Sources */,
 				4D44C26D1E77C53600E3477F /* Any.pbobjc.m in Sources */,
+				4DF3B4571E80E10A00E25F82 /* SILRequester.m in Sources */,
 				4D44C2691E77C53600E3477F /* GPBUnknownFieldSet.m in Sources */,
 				4D44C2191E77C52500E3477F /* AFHTTPSessionManager.m in Sources */,
 				4D44C2741E77C53600E3477F /* Timestamp.pbobjc.m in Sources */,
@@ -373,12 +365,12 @@
 				4D44C25F1E77C53600E3477F /* GPBArray.m in Sources */,
 				4D44C21C1E77C52500E3477F /* AFURLRequestSerialization.m in Sources */,
 				4D44C2711E77C53600E3477F /* FieldMask.pbobjc.m in Sources */,
-				4D44C2791E77C63700E3477F /* SILRequester.m in Sources */,
 				4D44C21D1E77C52500E3477F /* AFURLResponseSerialization.m in Sources */,
 				4D44C2751E77C53600E3477F /* Type.pbobjc.m in Sources */,
-				19B365FA1E7E9C5D00C72246 /* SILManager+Sample.m in Sources */,
+				4DF3B4561E80E10A00E25F82 /* SILParser.m in Sources */,
 				4D44C2661E77C53600E3477F /* GPBMessage.m in Sources */,
 				4D44C2671E77C53600E3477F /* GPBRootObject.m in Sources */,
+				4DF3B4551E80E10A00E25F82 /* SILManager.m in Sources */,
 				4D44C2601E77C53600E3477F /* GPBCodedInputStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
