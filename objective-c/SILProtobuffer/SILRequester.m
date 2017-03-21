@@ -179,10 +179,6 @@
               completion:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
     [[SILManager instance].responseDelegate didResponsedFromURL:url withTag:tag withResult:YES];
-    
-    NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", string);
-    
     __kindof GPBMessage *object = [SILParser dataToModel:responseObject withClassType:responseClass];
     handler(object, SILResponseCodeSuccess, nil);
 }
