@@ -11,7 +11,7 @@
 
 @class GPBMessage;
 
-typedef NS_ENUM(NSUInteger, SILRequestMethod)
+typedef NS_ENUM(unsigned long, SILRequestMethod)
 {
     SILRequestMethodNONE    = 0,
     SILRequestMethodGET     = 1,
