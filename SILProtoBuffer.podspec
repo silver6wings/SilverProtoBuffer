@@ -15,11 +15,15 @@ Pod::Spec.new do |s|
 
     s.requires_arc = true
 
-    s.source_files    = "objective-c/SILProtobuffer/*.{h,m}"
+    s.source_files    = 'objective-c/SILProtobuffer/SILProtobuffer.h',
+                        'objective-c/SILProtobuffer/SILAPI.h',
+                        'objective-c/SILProtobuffer/SILManager.{h,m}',
+                        'objective-c/SILProtobuffer/SILParser.{h,m}',
+                        'objective-c/SILProtobuffer/SILRequester.{h,m}'
 
     s.subspec 'AFNetworking' do |ss|
         ss.requires_arc = true
-        ss.source_files = "objective-c/AFNetworking/*.{h,m}"
+        ss.source_files = 'objective-c/AFNetworking/*.{h,m}'
     end
 
     s.subspec 'GoogleProtobuf' do |ss|
