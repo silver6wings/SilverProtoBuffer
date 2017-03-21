@@ -10,12 +10,6 @@
 #import "SILAPI.h"
 #import "AFNetworking.h"
 
-@interface SILManager ()
-
-+ (AFHTTPSessionManager *)defaultSessionManager;
-
-@end
-
 @implementation SILManager
 
 + (instancetype)instance
@@ -38,13 +32,12 @@
     [requestSerializer setValue:CONTENT_PROTOBUF forHTTPHeaderField:@"Content-Type"];
     [requestSerializer setValue:CONTENT_PROTOBUF forHTTPHeaderField:@"Accept"];
     
-    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:CONTENT_PROTOBUF, nil];
+    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:CONTENT_JSON, CONTENT_PROTOBUF, nil];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = requestSerializer;
     manager.responseSerializer = responseSerializer;
     return manager;
 }
-
 
 @end

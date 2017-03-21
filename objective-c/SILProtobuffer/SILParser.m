@@ -6,14 +6,16 @@
 //  Copyright © 2017年 silver6wings. All rights reserved.
 //
 
-#import "SILDataParser.h"
+#import "SILParser.h"
 #import "GPBProtocolBuffers.h"
 
-@implementation SILDataParser
+@implementation SILParser
 
-+ (GPBMessage *)dataToModel:(NSData *)data
++ (GPBMessage *)dataToModel:(id)data
               withClassType:(Class)classType
 {
+    if (![data isKindOfClass:[NSData class]]) return nil;
+    
     __kindof GPBMessage *object = nil;
     
     @try
@@ -22,7 +24,8 @@
     }
     @catch (NSException *exception)
     {
-        NSLog(@"解析Protobuf数据时出错");
+        NSLog(@"Parsing protobuf data error");
+        @throw NSGenericException;
     }
     
     return object;

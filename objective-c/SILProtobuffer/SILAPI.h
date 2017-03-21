@@ -6,11 +6,8 @@
 //  Copyright © 2017年 silver6wings. All rights reserved.
 //
 
-#warning fill your domain URL here
-
-#define BASE_URL            @"http://api.zhushou.youhujia.com"
-
 #define CONTENT_PROTOBUF    @"application/x-protobuf"
+#define CONTENT_JSON        @"application/json"
 #define REQUEST_TIMOUT      (10.0f)
 
 typedef NS_ENUM(NSUInteger, SILResponseCode)
@@ -22,12 +19,12 @@ typedef NS_ENUM(NSUInteger, SILResponseCode)
 
 @protocol SILRequestDelegate <NSObject>
 
-- (void)willRequestAPIwithURL:(NSString *)URL withTag:(NSString *)tag;
+- (void)willRequestToURL:(NSString *)URL withTag:(NSString *)tag;
 
 @end
 
 @protocol SILResponseDelegate <NSObject>
 
-- (void)didResponsedFromAPIwithURL:(NSString *)URL withTag:(NSString *)tag withResult:(BOOL)success;
+- (void)didResponsedFromURL:(NSString *)URL withTag:(NSString *)tag withResult:(BOOL)success;
 
 @end
