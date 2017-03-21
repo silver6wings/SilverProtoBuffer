@@ -7,7 +7,7 @@
 //
 
 #import "SILParser.h"
-#import "GPBProtocolBuffers.h"
+#import "GPBMessage.h"
 
 @implementation SILParser
 
