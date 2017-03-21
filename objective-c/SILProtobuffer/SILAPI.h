@@ -10,7 +10,7 @@
 #define CONTENT_JSON        @"application/json"
 #define REQUEST_TIMOUT      (10.0f)
 
-typedef NS_ENUM(NSUInteger, SILResponseCode)
+typedef NS_ENUM(unsigned long, SILResponseCode)
 {
     SILResponseCodeSuccess,             // 请求成功，数据成功
     SILResponseCodeFail,                // 请求失败，网络错误
