@@ -10,9 +10,9 @@
 
 @class GPBMessage;
 
-@interface SILDataManager : NSObject
+@interface SILParser : NSObject
 
-+ (GPBMessage *)dataToProto:(NSData *)data
++ (GPBMessage *)dataToModel:(id)data
               withClassType:(Class)classType;
 
 @end

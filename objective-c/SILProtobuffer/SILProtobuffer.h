@@ -8,5 +8,5 @@
 
 #import "SILAPI.h"
 #import "SILManager.h"
-#import "SILRequestManager.h"
-#import "SILDataManager.h"
+#import "SILRequester.h"
+#import "SILParser.h"
