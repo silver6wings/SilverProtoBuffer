@@ -6,6 +6,9 @@
 //  Copyright © 2017年 silver6wings. All rights reserved.
 //
 
+#import "AFNetworking.h"
+#import "GPBProtoBuffers.h"
+
 #import "SILAPI.h"
 #import "SILManager.h"
 #import "SILRequester.h"

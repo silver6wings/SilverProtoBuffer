@@ -8,12 +8,15 @@
 
 #define CONTENT_PROTOBUF    @"application/x-protobuf"
 #define CONTENT_JSON        @"application/json"
-#define REQUEST_TIMOUT      (10.0f)
+#define DEFAULT_REQUEST_TIMOUT      (10.0f)
+
+#import "AFNetworking.h"
 
 typedef NS_ENUM(unsigned long, SILResponseCode)
 {
     SILResponseCodeSuccess,             // 请求成功，数据成功
-    SILResponseCodeFail,                // 请求失败，网络错误
+    SILResponseCodeFailParse,           // 请求成功，数据失败
+    SILResponseCodeNetworkError,        // 请求失败，网络错误
     SILResponseCodeProcess,             // 请求过程中
 };
 

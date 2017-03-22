@@ -9,7 +9,6 @@
 #import "SILManager.h"
 #import "SILParser.h"
 #import "SILRequester.h"
-#import "AFNetworking.h"
 #import "GPBMessage.h"
 
 @implementation SILRequester
@@ -180,7 +179,8 @@
 {
     [[SILManager instance].responseDelegate didResponsedFromURL:url withTag:tag withResult:YES];
     __kindof GPBMessage *object = [SILParser dataToModel:responseObject withClassType:responseClass];
-    handler(object, SILResponseCodeSuccess, nil);
+    
+    handler(object, object ? SILResponseCodeSuccess : SILResponseCodeFailParse, nil);
 }
 
 + (void)failFromRequestURL:(NSString *)url
@@ -189,7 +189,7 @@
               completion:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
     [[SILManager instance].responseDelegate didResponsedFromURL:url withTag:tag withResult:NO];
-    handler(nil, SILResponseCodeFail, error);
+    handler(nil, SILResponseCodeNetworkError, error);
 }
 
 @end

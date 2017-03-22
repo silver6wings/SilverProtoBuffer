@@ -8,7 +8,6 @@
 
 #import "SILManager.h"
 #import "SILAPI.h"
-#import "AFNetworking.h"
 
 @implementation SILManager
 
@@ -28,7 +27,7 @@
     AFHTTPRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
     AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    requestSerializer.timeoutInterval = REQUEST_TIMOUT;
+    requestSerializer.timeoutInterval = DEFAULT_REQUEST_TIMOUT;
     [requestSerializer setValue:CONTENT_PROTOBUF forHTTPHeaderField:@"Content-Type"];
     [requestSerializer setValue:CONTENT_PROTOBUF forHTTPHeaderField:@"Accept"];
     
