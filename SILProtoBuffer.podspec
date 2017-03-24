@@ -13,20 +13,21 @@ Pod::Spec.new do |s|
     s.source       = { :git => "https://github.com/silver6wings/SILProtobuffer.git",
                        :tag => "#{s.version}" }
 
-    s.requires_arc = true
+    s.subspec 'SilverProtobuffer' do |ss|
+        s.requires_arc = true
+        s.source_files    = 'objective-c/SILProtobuffer/SILProtobuffer.h',
+                            'objective-c/SILProtobuffer/SILAPI.h',
+                            'objective-c/SILProtobuffer/SILManager.{h,m}',
+                            'objective-c/SILProtobuffer/SILParser.{h,m}',
+                            'objective-c/SILProtobuffer/SILRequester.{h,m}'
+    end
 
-    s.source_files    = 'objective-c/SILProtobuffer/SILProtobuffer.h',
-                        'objective-c/SILProtobuffer/SILAPI.h',
-                        'objective-c/SILProtobuffer/SILManager.{h,m}',
-                        'objective-c/SILProtobuffer/SILParser.{h,m}',
-                        'objective-c/SILProtobuffer/SILRequester.{h,m}'
-
-    s.subspec 'AFNetworking' do |ss|
+    s.subspec 'SilverAFNetworking' do |ss|
         ss.requires_arc = true
         ss.source_files = 'objective-c/AFNetworking/*.{h,m}'
     end
 
-    s.subspec 'GoogleProtobuf' do |ss|
+    s.subspec 'Protobuf260' do |ss|
 
         ss.requires_arc = false
         ss.source_files = 'objective-c/GoogleProtobuf/*.{h,m}',
