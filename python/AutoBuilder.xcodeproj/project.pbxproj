@@ -7,14 +7,30 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		4D5E14491E8E31070083C680 /* ios.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ios.py; sourceTree = "<group>"; };
+		4D5E144A1E8E31270083C680 /* funcBody.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = funcBody.txt; sourceTree = "<group>"; };
+		4D5E144B1E8E31270083C680 /* funcHeader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = funcHeader.txt; sourceTree = "<group>"; };
 		4D62DBD21E8675A5000B1D13 /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		4D6E755D1E8A54B600D77682 /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		4D5E14481E8E30FA0083C680 /* iosTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				4D5E144A1E8E31270083C680 /* funcBody.txt */,
+				4D5E144B1E8E31270083C680 /* funcHeader.txt */,
+			);
+			path = iosTemplate;
+			sourceTree = "<group>";
+		};
 		4D62DBC71E867588000B1D13 = {
 			isa = PBXGroup;
 			children = (
+				4D5E14481E8E30FA0083C680 /* iosTemplate */,
 				4D62DBD21E8675A5000B1D13 /* main.py */,
+				4D5E14491E8E31070083C680 /* ios.py */,
+				4D6E755D1E8A54B600D77682 /* sample.json */,
 			);
 			sourceTree = "<group>";
 		};

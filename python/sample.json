@@ -1,23 +1,33 @@
 {
-    "providerName" :  "ProtoDemo",
+    "providerName" : "SILManager",
+    "className" :  "ProtoDemo",
     "javaPackage" : "test.sample",
-    "objectivecPrefix" : "SAF",
-    "apiSpecs" : 
+    "iosProtoPrefix" : "YHJG",
+    "javaProtoClass" : "Galaxy",
+    "apis" : 
     [
         {
-            "introduction" : "This is a sample api",
-            "functionName" : "getRandomString",
+            "introduction" : "This is the first sample api demo",
+            "apiName" : "getRandomString",
             "tag" : "get_random_string",
-            "url" : "https://www.random.org/strings/?num={num}&len={len}&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd={new}",
+            "url" : "/strings/?num={num}&len={len}&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd={isnew}",
             "urlParameter" :
             {
-                "num" : "int",
-                "len" : "int",
-                "new" : "str"
+                "num" : "uint",
+                "len" : "uint",
+                "isnew" : "str"
             },
             "method" : "GET",
-            "requestClass" : "",
-            "responseClass" : ""
+            "responseClass" : "DemoResponse"
+        },
+        {
+            "introduction" : "This is the second sample api demo",
+            "apiName" : "test",
+            "tag" : "get_random_string",
+            "url" : "/www.random.org/",
+            "method" : "GET",
+            "requestClass" : "SampleRequest",
+            "responseClass" : "SampleResponse"
         }
     ]
 }

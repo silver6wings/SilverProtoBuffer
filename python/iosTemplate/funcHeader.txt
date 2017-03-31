@@ -1,0 +1,3 @@
+- (void){ApiName}WithCompletion:(void (^)({responseClass} *response, YHJResponseCode code, NSError *error))handler
+AndRequest:({requestClass} *)request
+And{ParamName}:({ParamType}){ParamName}
