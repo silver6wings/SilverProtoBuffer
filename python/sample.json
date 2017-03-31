@@ -2,8 +2,8 @@
     "providerName" : "SILManager",
     "className" :  "ProtoDemo",
     "javaPackage" : "test.sample",
-    "iosProtoPrefix" : "YHJG",
-    "javaProtoClass" : "Galaxy",
+    "iosProtoPrefix" : "SIL",
+    "javaProtoClass" : "SILProto",
     "apis" : 
     [
         {
