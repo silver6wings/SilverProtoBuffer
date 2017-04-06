@@ -1,0 +1,40 @@
+@interface YHJDataProvider ({ProviderName})
+
+- (void){ApiName}WithCompletion:(void (^)({responseClass} *response, YHJResponseCode code, NSError *error))handler
+                     AndRequest:({requestClass} *)request
+                 And{ParamName}:({ParamType}){ParamName};
+
+@end
+
+@implementation YHJDataProvider ({ProviderName})
+
+// {Introduction}
+- (void){ApiName}WithCompletion:(void (^)({responseClass} *response, YHJResponseCode code, NSError *error))handler
+                     AndRequest:({requestClass} *)request
+                 And{ParamName}:({ParamType}){ParamName}
+{
+    NSString *URL = [NSString stringWithFormat:@"%@{URL}", [YHJDataProvider instance].serverURL];
+    URL = [URL stringByReplacingOccurrencesOfString:@"{{ParamName}}" withString:{ParamName}];
+    URL = [URL stringByReplacingOccurrencesOfString:@"{nurseId}" withString:[NSString stringWithFormat:@"%lu", nurseId]];
+
+    [YHJProtoUtils sendGPBWithMethod:@"{Method}"
+                              AndTag:@"{TAG}"
+                              AndURL:URL
+                       AndGPBMessage:{request/nil}
+                     AndResponseType:[{responseClass} class]
+                      AndCachePolicy:NSURLRequestUseProtocolCachePolicy
+                   CompletionHandler:handler];
+}
+
+@end
+
+/*
+ {Introduction}
+ -{ApiName}
+ -{TAG}
+ {URL}               /api/nurses/calendars/v2/events?scenario=messageCenter
+ {URLParameters}     [{ParamName}:{ParamType}]
+ {Method}            GET
+ {requestClass}
+ {responseClass}
+ */

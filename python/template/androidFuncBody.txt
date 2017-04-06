@@ -1,0 +1,8 @@
+		String URL = serverURL + "{URL}";
+		URL = URL.replace("{{PARAM_NAME}}", {PARAM_NAME}.toString());
+		RequestModel requestModel = new RequestModel();
+		requestModel.cacheType = cacheType;
+		requestModel.requestType = RequestType.{METHOD};
+		requestModel.url = URL;
+		requestModel.sensorTag = "{TAG}";
+		ProtoBufferRequester.request(context, token, requestModel, {REQUEST_EXISTS}, {JAVA_PROTO_CLASS}.{RESPONSE_CLASS}.class, handler);

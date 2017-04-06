@@ -1,0 +1,23 @@
+{
+    "providerName" : "SILManager",
+    "ios":
+    {
+        "dataTypes" : 
+        {
+            "str" : "NSString *",
+            "int" : "NSInteger",
+            "uint" : "NSUInteger",
+            "long" : "NSInteger"
+        }
+    },
+    "android":
+    {
+        "dataTypes" : 
+        {
+            "str" : "String",
+            "int" : "Integer",
+            "uint" : "Integer",
+            "long" : "Long"
+        }
+    }
+}

@@ -3,6 +3,20 @@
 
 @implementation SILManager (ProtoDemo)
 
+// 添加公告
+- (void)addAnnouncementWithCompletion:(void (^)(YHJGAnnouncementEventAddDTO *response, YHJResponseCode code, NSError *error))handler
+                           AndRequest:(YHJGAnnouncementEventAddOption *)request
+{
+    NSString *URL = [NSString stringWithFormat:@"%@/api/addAnnouncement", [SILManager instance].serverURL];
+    [YHJProtoUtils sendGPBWithMethod:@"POST"
+                              AndTag:@"addAnnouncement"
+                              AndURL:URL
+                       AndGPBMessage:request
+                     AndResponseType:[YHJGAnnouncementEventAddDTO class]
+                      AndCachePolicy:NSURLRequestUseProtocolCachePolicy
+                   CompletionHandler:handler];
+}
+
 // This is the first sample api demo
 - (void)getRandomStringWithCompletion:(void (^)(YHJGMessageCenterDTO *response, YHJResponseCode code, NSError *error))handler
                                AndNum:(NSUInteger)num

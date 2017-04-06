@@ -1,11 +1,20 @@
 {
     "providerName" : "SILManager",
     "className" :  "ProtoDemo",
-    "javaPackage" : "test.sample",
-    "iosProtoPrefix" : "SIL",
-    "javaProtoClass" : "SILProto",
+    "iosProtoPrefix" : "YHJG",
+    "javaProtoPackage" : "test.sample",
+    "javaProtoClass" : "Galaxy",
     "apis" : 
     [
+        {
+            "introduction" : "添加公告",
+            "apiName" : "addAnnouncement",
+            "tag" : "addAnnouncement",
+            "url" : "/api/addAnnouncement",
+            "method" : "POST",
+            "requestClass" : "AnnouncementEventAddOption",
+            "responseClass" : "AnnouncementEventAddDTO"
+        },
         {
             "introduction" : "This is the first sample api demo",
             "apiName" : "getRandomString",
@@ -18,7 +27,7 @@
                 "isnew" : "str"
             },
             "method" : "GET",
-            "responseClass" : "DemoResponse"
+            "responseClass" : "MessageCenterDTO"
         },
         {
             "introduction" : "This is the second sample api demo",
@@ -26,8 +35,8 @@
             "tag" : "get_random_string",
             "url" : "/www.random.org/",
             "method" : "GET",
-            "requestClass" : "SampleRequest",
-            "responseClass" : "SampleResponse"
+            "requestClass" : "AddOption",
+            "responseClass" : "MessageCenterDTO"
         }
     ]
 }

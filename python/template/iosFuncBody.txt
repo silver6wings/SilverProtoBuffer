@@ -1,0 +1,9 @@
+    NSString *URL = [NSString stringWithFormat:@"%@{URL}", [{ProviderName} instance].serverURL];
+    URL = [URL stringByReplacingOccurrencesOfString:@"{{ParamName}}" withString:[NSString stringWithFormat:@"{ParamPlaceholder}", {ParamName}]];
+    [YHJProtoUtils sendGPBWithMethod:@"{Method}"
+                              AndTag:@"{TAG}"
+                              AndURL:URL
+                       AndGPBMessage:{requestExists}
+                     AndResponseType:[{responseClass} class]
+                      AndCachePolicy:NSURLRequestUseProtocolCachePolicy
+                   CompletionHandler:handler];
