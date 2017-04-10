@@ -2,10 +2,13 @@
 
 Google Protobuffer v2.6 pods easy to import
 
-本项目内容如下：
-* iOS与Android两个基础Http API Request框架
-* Python打包API的工具
-* Sample项目若干
+Project contains:
+* objective-c : Http API Request iOS Framework
+* java_android : Http API Request Android Framework
+* python-packer : Python API Packer Tools
+* sample-server : A server sample code based on Spring Boot Framework
+
+
 
 
 
