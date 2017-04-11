@@ -1,16 +1,17 @@
 {
     "className" :  "HelloDemo",
+    "objcProtoPrefix" : "SIL",
+    "objcProtoFile" : "Hello",
     "javaProtoPackage" : "com.example",
     "javaProtoClass" : "Hello",
-    "iosProtoPrefix" : "SIL",
     "apis" : 
     [
         {
             "introduction" : "This is a hello demo get",
             "apiName" : "helloGet",
             "tag" : "hello_get",
-            "url" : "/hello",
             "method" : "GET",
+            "url" : "/hello",
             "requestClass" : "HelloRequest",
             "responseClass" : "HelloResponse"
         },
@@ -18,6 +19,7 @@
             "introduction" : "This is a hello demo post",
             "apiName" : "helloPost",
             "tag" : "hello_post",
+            "method" : "POST",
             "url" : "/hello",
             "urlParameter" :
             {
@@ -25,8 +27,20 @@
                 "len" : "uint",
                 "isnew" : "str"
             },
-            "method" : "POST",
             "responseClass" : "HelloResponse"
+        },
+        {
+            "introduction" : "IIIIIIIIIIIIIIII",
+            "apiName" : "AAAAA",
+            "tag" : "TTTTT",
+            "method" : "MMMMMMMMM",
+            "url" : "UUUUUUUUUUU",
+            "urlParameter" :
+            {
+                "PPPPPPPP" : "uint"
+            },
+            "requestClass" : "RRRRRRR",
+            "responseClass" : "RRRRRRRR"
         }
     ]
 }

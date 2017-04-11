@@ -41,7 +41,8 @@ class iosAutoPacker:
 		dataPlaceHolders = self.grammarJSON["dataPlaceHolders"]
 
 		className = self.specJSON["className"]
-		iosPrefix = self.specJSON["iosProtoPrefix"]
+		iosPrefix = self.specJSON["objcProtoPrefix"]
+		iosProto = self.specJSON["objcProtoFile"]
 		apis = self.specJSON["apis"]
 
 		# prepare template
@@ -61,7 +62,9 @@ class iosAutoPacker:
 		fileM = open("".join([os.getcwd(), "/", outputPath, "/", providerName, "+", className,".m"]), "w")
 
 		# class import
-		fileH.write("\n#import <Foundation/Foundation.h>\n\n")
+		fileH.write("\n#import <Foundation/Foundation.h>")
+		fileH.write("\n#import \"" + providerName + ".h\"\n\n")
+		fileH.write("\n#import \"" + iosProto + ".pbobjc.h\"\n\n")
 		fileM.write("\n#import \"" + providerName + "+" + className + ".h\"\n\n")
 
 		# class begin

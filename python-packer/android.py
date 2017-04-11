@@ -5,10 +5,6 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-inputPath = "input/sample.json"
-outputPath = "output"
-grammarPath = "grammar.json"
-
 class androidAutoPacker:
 
     grammarJSON = None
@@ -68,7 +64,7 @@ class androidAutoPacker:
         funcBodyRequest = funcBody.read()
         funcBody.close()
 
-        fileC = open("".join([os.getcwd(), "/output/", className, "Provider.java"]), "w")
+        fileC = open("".join([os.getcwd(), "/", outputPath,"/", className, "Provider.java"]), "w")
 
         # add import
         fileC.write("package io.dcloud.service.protobuf;\n\n")
