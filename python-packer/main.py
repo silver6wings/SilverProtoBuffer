@@ -14,15 +14,15 @@ def generateProto(protoName, outputPath, language):
 	print "Protobuf File :" + protoName
 	currentPath = os.getcwd()
 	os.chdir(os.getcwd() + "/input")
-	os.system("protoc --" + language + "_out=../" + outputPath +" " + protoName + ".proto")
+	os.system("protoc --" + language + "_out=../" + outputPath + " " + protoName + ".proto")
 	os.chdir(currentPath)
 
 def main():	
 	myGrammarPath = "input/silverGrammar.json"
 	myInputPath = "input/silverSampleAPI.json"
 
-	myOutputJavaPath = "output/java"
-	myOutputObjcPath = "output/objc"
+	myOutputJavaPath = "output_java"
+	myOutputObjcPath = "output_objc"
 
 	makeDirIfNotExist(myOutputJavaPath)
 	makeDirIfNotExist(myOutputObjcPath)
