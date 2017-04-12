@@ -14,7 +14,7 @@ def generateProto(protoName, outputPath, language):
 	print "Protobuf File :" + protoName
 	currentPath = os.getcwd()
 	os.chdir(os.getcwd() + "/input")
-	os.system("protoc --" + language + "_out=../" + outputPath + " " + protoName + ".proto")
+	os.system("protoc --" + language + "_out=../" + outputPath +" " + protoName + ".proto")
 	os.chdir(currentPath)
 
 def main():	
@@ -33,8 +33,8 @@ def main():
 	ap = androidAutoPacker()
 	ap.pack(myGrammarPath, myInputPath, myOutputJavaPath)
 
-	generateProto("Hello", myOutputObjcPath, "objc")
-	generateProto("Hello", myOutputJavaPath, "java")
+	generateProto("silverSampleAPI", myOutputObjcPath, "objc")
+	generateProto("silverSampleAPI", myOutputJavaPath, "java")
 
 if __name__ == '__main__':
 	main()

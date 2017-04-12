@@ -74,7 +74,7 @@ class iosAutoPacker:
 		# every function
 		for i in range(0, len(apis)):
 			api = apis[i]
-
+			apiName = api["api"]
 			# preload
 			responseClass = iosPrefix + api["responseClass"]
 			if api.has_key("requestClass"):
@@ -85,11 +85,11 @@ class iosAutoPacker:
 			fileM.write("// " + api["introduction"] + "\n")
 
 			# add apiName and completion handler
-			header = funcHeaderName.replace("{ApiName}", api["apiName"])
+			header = funcHeaderName.replace("{ApiName}", apiName)
 			header = header.replace("{responseClass}", responseClass)
 			fileH.write(header)
 			fileM.write(header)
-			nameLength = 8 + len(api["apiName"]) + 14
+			nameLength = 8 + len(apiName) + 14
 
 			# add request
 			if api.has_key("requestClass"):

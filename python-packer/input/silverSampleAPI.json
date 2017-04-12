@@ -8,7 +8,7 @@
     [
         {
             "introduction" : "This is a hello demo get",
-            "apiName" : "helloGet",
+            "api" : "helloGet",
             "tag" : "hello_get",
             "method" : "GET",
             "url" : "/hello",
@@ -17,7 +17,7 @@
         },
         {
             "introduction" : "This is a hello demo post",
-            "apiName" : "helloPost",
+            "api" : "helloPost",
             "tag" : "hello_post",
             "method" : "POST",
             "url" : "/hello",
@@ -31,7 +31,7 @@
         },
         {
             "introduction" : "IIIIIIIIIIIIIIII",
-            "apiName" : "AAAAA",
+            "api" : "AAAAA",
             "tag" : "TTTTT",
             "method" : "MMMMMMMMM",
             "url" : "UUUUUUUUUUU",
