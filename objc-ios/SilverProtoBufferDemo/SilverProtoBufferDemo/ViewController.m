@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SILProtoBuffer.h"
+#import "SILManager+HelloDemo.h"
 
 @interface ViewController ()
 
@@ -21,7 +22,13 @@
     
     [SILManager instance].isDebugging = NO;
     [SILManager instance].onlineServerURL = @"http://localhost:8080";
-        
+    
+    [SILManager helloGetWithCompletion:^(SILHelloResponse *response, SILResponseCode code, NSError *error)
+    {
+        NSLog(@"%@", response.helloContent);
+    }
+                            AndContent:@"qqq"
+                                 AndId:111];
 }
 
 

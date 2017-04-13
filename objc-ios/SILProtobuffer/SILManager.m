@@ -13,8 +13,8 @@
 
 @interface SILManager ()
 
-
 @property (nonatomic, strong, readwrite) NSString *serverURL;
+
 @end
 
 @implementation SILManager

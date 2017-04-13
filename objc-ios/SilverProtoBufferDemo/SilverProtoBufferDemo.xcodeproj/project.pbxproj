@@ -13,8 +13,8 @@
 		4D5AD0961E9F5AC90005EC55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5AD0941E9F5AC90005EC55 /* Main.storyboard */; };
 		4D5AD0981E9F5AC90005EC55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5AD0971E9F5AC90005EC55 /* Assets.xcassets */; };
 		4D5AD09B1E9F5AC90005EC55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5AD0991E9F5AC90005EC55 /* LaunchScreen.storyboard */; };
-		4DF1B4681E9F6D2200ED63CE /* Hello.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B4651E9F6D2200ED63CE /* Hello.pbobjc.m */; };
-		4DF1B46C1E9F6D6900ED63CE /* SILManager+HelloDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B46B1E9F6D6900ED63CE /* SILManager+HelloDemo.m */; };
+		4DF1B4711E9F72B800ED63CE /* Hello.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B46E1E9F72B800ED63CE /* Hello.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4DF1B4721E9F72B800ED63CE /* SILManager+HelloDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1B4701E9F72B800ED63CE /* SILManager+HelloDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +28,10 @@
 		4D5AD0971E9F5AC90005EC55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D5AD09A1E9F5AC90005EC55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D5AD09C1E9F5AC90005EC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DF1B4641E9F6D2200ED63CE /* Hello.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hello.pbobjc.h; sourceTree = "<group>"; };
-		4DF1B4651E9F6D2200ED63CE /* Hello.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.pbobjc.m; sourceTree = "<group>"; };
-		4DF1B46A1E9F6D6900ED63CE /* SILManager+HelloDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SILManager+HelloDemo.h"; sourceTree = "<group>"; };
-		4DF1B46B1E9F6D6900ED63CE /* SILManager+HelloDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SILManager+HelloDemo.m"; sourceTree = "<group>"; };
+		4DF1B46D1E9F72B800ED63CE /* Hello.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hello.pbobjc.h; sourceTree = "<group>"; };
+		4DF1B46E1E9F72B800ED63CE /* Hello.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.pbobjc.m; sourceTree = "<group>"; };
+		4DF1B46F1E9F72B800ED63CE /* SILManager+HelloDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SILManager+HelloDemo.h"; sourceTree = "<group>"; };
+		4DF1B4701E9F72B800ED63CE /* SILManager+HelloDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SILManager+HelloDemo.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +68,10 @@
 				4D5AD08F1E9F5AC90005EC55 /* AppDelegate.m */,
 				4D5AD0911E9F5AC90005EC55 /* ViewController.h */,
 				4D5AD0921E9F5AC90005EC55 /* ViewController.m */,
-				4DF1B4641E9F6D2200ED63CE /* Hello.pbobjc.h */,
-				4DF1B4651E9F6D2200ED63CE /* Hello.pbobjc.m */,
-				4DF1B46A1E9F6D6900ED63CE /* SILManager+HelloDemo.h */,
-				4DF1B46B1E9F6D6900ED63CE /* SILManager+HelloDemo.m */,
+				4DF1B46D1E9F72B800ED63CE /* Hello.pbobjc.h */,
+				4DF1B46E1E9F72B800ED63CE /* Hello.pbobjc.m */,
+				4DF1B46F1E9F72B800ED63CE /* SILManager+HelloDemo.h */,
+				4DF1B4701E9F72B800ED63CE /* SILManager+HelloDemo.m */,
 				4D5AD0971E9F5AC90005EC55 /* Assets.xcassets */,
 				4D5AD0941E9F5AC90005EC55 /* Main.storyboard */,
 				4D5AD0991E9F5AC90005EC55 /* LaunchScreen.storyboard */,
@@ -162,9 +162,9 @@
 			files = (
 				4D5AD0931E9F5AC90005EC55 /* ViewController.m in Sources */,
 				4D5AD0901E9F5AC90005EC55 /* AppDelegate.m in Sources */,
-				4DF1B46C1E9F6D6900ED63CE /* SILManager+HelloDemo.m in Sources */,
+				4DF1B4721E9F72B800ED63CE /* SILManager+HelloDemo.m in Sources */,
 				4D5AD08D1E9F5AC90005EC55 /* main.m in Sources */,
-				4DF1B4681E9F6D2200ED63CE /* Hello.pbobjc.m in Sources */,
+				4DF1B4711E9F72B800ED63CE /* Hello.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
