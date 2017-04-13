@@ -16,11 +16,15 @@
 @property (nonatomic, weak) id <SILRequestDelegate> requestDelegate;
 @property (nonatomic, weak) id <SILResponseDelegate> responseDelegate;
 
+@property (nonatomic, assign) BOOL isDebugging;
+
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+
+@property (nonatomic, strong) NSString *debugServerURL;
+@property (nonatomic, strong) NSString *onlineServerURL;
+
+@property (nonatomic, strong, readonly) NSString *serverURL;
 
 + (instancetype)instance;
 
 @end
-
-
-

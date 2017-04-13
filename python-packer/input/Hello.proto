@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package helloDemo;
+
+option java_package = "com.example.hello";
+option java_outer_classname = "MyHello";
+
+message Hello
+{
+    optional int64 helloId = 1;
+    optional string helloContent = 2;
+}

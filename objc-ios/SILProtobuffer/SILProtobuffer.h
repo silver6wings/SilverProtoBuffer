@@ -7,7 +7,7 @@
 //
 
 #import "AFNetworking.h"
-#import "GPBProtoBuffers.h"
+#import "GPBProtocolBuffers.h"
 
 #import "SILAPI.h"
 #import "SILManager.h"
