@@ -9,38 +9,24 @@
         {
             "introduction" : "This is a hello demo get",
             "api" : "helloGet",
-            "tag" : "hello_get",
+            "tag" : "helloGet",
             "method" : "GET",
-            "url" : "/hello",
-            "requestClass" : "HelloRequest",
+            "url" : "/hello?id={id}&content={content}",            
+            "urlParameter" :
+            {
+                "id" : "uint",
+                "content" : "str"
+            },
             "responseClass" : "HelloResponse"
         },
         {
             "introduction" : "This is a hello demo post",
             "api" : "helloPost",
-            "tag" : "hello_post",
+            "tag" : "helloPost",
             "method" : "POST",
             "url" : "/hello",
-            "urlParameter" :
-            {
-                "num" : "uint",
-                "len" : "uint",
-                "isnew" : "str"
-            },
+            "requestClass" : "HelloRequest",
             "responseClass" : "HelloResponse"
-        },
-        {
-            "introduction" : "IIIIIIIIIIIIIIII",
-            "api" : "AAAAA",
-            "tag" : "TTTTT",
-            "method" : "MMMMMMMMM",
-            "url" : "UUUUUUUUUUU",
-            "urlParameter" :
-            {
-                "PPPPPPPP" : "uint"
-            },
-            "requestClass" : "RRRRRRR",
-            "responseClass" : "RRRRRRRR"
         }
     ]
 }

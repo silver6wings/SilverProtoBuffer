@@ -12,13 +12,12 @@
     NSString *URL = [NSString stringWithFormat:@"%@/hello?id={id}&content={content}", [SILManager instance].serverURL];
     URL = [URL stringByReplacingOccurrencesOfString:@"{content}" withString:[NSString stringWithFormat:@"%@", content]];
     URL = [URL stringByReplacingOccurrencesOfString:@"{id}" withString:[NSString stringWithFormat:@"%lu", id]];
-    [SILRequester requestWithMethod:SILRequestMethodGET"
+    [SILRequester requestWithMethod:SILRequestMethodGET
                              andTag:@"helloGet"
                              andURL:URL
                       andGPBMessage:nil
                     andResponseType:[SILHelloResponse class]
                   completionHandler:handler];
-
 }
 
 // This is a hello demo post
@@ -26,13 +25,12 @@
                      AndRequest:(SILHelloRequest *)request
 {
     NSString *URL = [NSString stringWithFormat:@"%@/hello", [SILManager instance].serverURL];
-    [SILRequester requestWithMethod:SILRequestMethodPOST"
+    [SILRequester requestWithMethod:SILRequestMethodPOST
                              andTag:@"helloPost"
                              andURL:URL
                       andGPBMessage:request
                     andResponseType:[SILHelloResponse class]
                   completionHandler:handler];
-
 }
 
 @end

@@ -63,9 +63,13 @@ class iosAutoPacker:
 
 		# class import
 		fileH.write("\n#import <Foundation/Foundation.h>")
-		fileH.write("\n#import \"" + providerName + ".h\"\n\n")
-		fileH.write("\n#import \"" + iosProto + ".pbobjc.h\"\n\n")
-		fileM.write("\n#import \"" + providerName + "+" + className + ".h\"\n\n")
+		fileH.write("\n#import \"" + providerName + ".h\"")
+		fileH.write("\n#import \"" + iosProto + ".pbobjc.h\"")
+		fileH.write("\n\n")
+
+		fileM.write("\n#import \"" + providerName + "+" + className + ".h\"")
+		fileM.write("\n#import \"SILRequester.h\"")
+		fileM.write("\n\n")
 
 		# class begin
 		fileH.write("@interface " + providerName + " (" + className + ")\n\n")
@@ -158,10 +162,8 @@ class iosAutoPacker:
 			else:
 				body = body.replace("{requestExists}", "nil")
 
-
 			fileM.write(body)
-
-			fileM.write("\n}\n\n")
+			fileM.write("}\n\n")
 
 		# class end
 		fileH.write("@end\n")
@@ -169,3 +171,4 @@ class iosAutoPacker:
 
 		fileH.close()
 		fileM.close()
+		print "Pack iOS API Completed!"

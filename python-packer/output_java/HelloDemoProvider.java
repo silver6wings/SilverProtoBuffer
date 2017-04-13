@@ -9,53 +9,35 @@ import com.example.Hello;
 public class HelloDemoProvider extends SILManager
 {
 	public static interface HelloResponseHandler extends ProtoBufferBaseHandler<Hello.HelloResponse> {}
-	public static interface RRRRRRRRHandler extends ProtoBufferBaseHandler<Hello.RRRRRRRR> {}
 
 	// This is a hello demo get
 	public static void helloGet(Context context, String token, CacheType cacheType,
+		{PARAM_TYPE} content, {PARAM_TYPE} id, 
+		HelloDemoProvider.HelloResponseHandler handler)
+	{
+		String URL = serverURL + "/hello?id={id}&content={content}";
+		URL = URL.replace("{content}", content.toString());
+		URL = URL.replace("{id}", id.toString());
+		RequestModel requestModel = new RequestModel();
+		requestModel.cacheType = cacheType;
+		requestModel.requestType = RequestType.GET;
+		requestModel.url = URL;
+		requestModel.sensorTag = "helloGet";
+		ProtoBufferRequester.request(context, token, requestModel, null, Hello.HelloResponse.class, handler);
+	}
+
+	// This is a hello demo post
+	public static void helloPost(Context context, String token, CacheType cacheType,
 		Hello.HelloRequest.Builder requestBody,
 		HelloDemoProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello";
 		RequestModel requestModel = new RequestModel();
 		requestModel.cacheType = cacheType;
-		requestModel.requestType = RequestType.GET;
-		requestModel.url = URL;
-		requestModel.sensorTag = "hello_get";
-		ProtoBufferRequester.request(context, token, requestModel, requestBody, Hello.HelloResponse.class, handler);
-	}
-
-	// This is a hello demo post
-	public static void helloPost(Context context, String token, CacheType cacheType,
-		{PARAM_TYPE} num, {PARAM_TYPE} len, {PARAM_TYPE} isnew, 
-		HelloDemoProvider.HelloResponseHandler handler)
-	{
-		String URL = serverURL + "/hello";
-		URL = URL.replace("{num}", num.toString());
-		URL = URL.replace("{len}", len.toString());
-		URL = URL.replace("{isnew}", isnew.toString());
-		RequestModel requestModel = new RequestModel();
-		requestModel.cacheType = cacheType;
 		requestModel.requestType = RequestType.POST;
 		requestModel.url = URL;
-		requestModel.sensorTag = "hello_post";
-		ProtoBufferRequester.request(context, token, requestModel, null, Hello.HelloResponse.class, handler);
-	}
-
-	// IIIIIIIIIIIIIIII
-	public static void AAAAA(Context context, String token, CacheType cacheType,
-		{PARAM_TYPE} PPPPPPPP, 
-		Hello.RRRRRRR.Builder requestBody,
-		HelloDemoProvider.RRRRRRRRHandler handler)
-	{
-		String URL = serverURL + "UUUUUUUUUUU";
-		URL = URL.replace("{PPPPPPPP}", PPPPPPPP.toString());
-		RequestModel requestModel = new RequestModel();
-		requestModel.cacheType = cacheType;
-		requestModel.requestType = RequestType.MMMMMMMMM;
-		requestModel.url = URL;
-		requestModel.sensorTag = "TTTTT";
-		ProtoBufferRequester.request(context, token, requestModel, requestBody, Hello.RRRRRRRR.class, handler);
+		requestModel.sensorTag = "helloPost";
+		ProtoBufferRequester.request(context, token, requestModel, requestBody, Hello.HelloResponse.class, handler);
 	}
 
 }
