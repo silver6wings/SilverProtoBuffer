@@ -6,13 +6,13 @@ import io.dcloud.service.protobuf.params.RequestModel;
 import io.dcloud.service.protobuf.params.RequestType;
 import com.example.Hello;
 
-public class HelloDemoProvider extends SILManager
+public class HelloDemoProvider extends SILDataProvider
 {
 	public static interface HelloResponseHandler extends ProtoBufferBaseHandler<Hello.HelloResponse> {}
 
 	// This is a hello demo get
 	public static void helloGet(Context context, String token, CacheType cacheType,
-		{PARAM_TYPE} content, {PARAM_TYPE} id, 
+		String content, Integer id, 
 		HelloDemoProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello?id={id}&content={content}";
