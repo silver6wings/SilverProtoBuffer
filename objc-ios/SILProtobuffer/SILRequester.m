@@ -18,7 +18,7 @@
                    andURL:(NSString *)url
             andGPBMessage:(__kindof GPBMessage *)gpb
           andResponseType:(Class)responseClass
-        CompletionHandler:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
+        completionHandler:(void(^)(__kindof GPBMessage *response, SILResponseCode code, NSError *error))handler
 {
     [SILRequester requestWithMethod:method
                              andTag:tag

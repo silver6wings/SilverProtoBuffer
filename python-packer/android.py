@@ -9,7 +9,7 @@ class androidAutoPacker:
 
 	grammarJSON = None
 	specJSON = None
-	platform = "ios"
+	platform = "android"
 
 	def __init__(self):
 		return
@@ -118,7 +118,7 @@ class androidAutoPacker:
 					header = header.replace("\n", "")
 					header = header.replace("\t", "")
 					header = header.replace("{PARAM_NAME}", paramName, 1)
-					header = header.replace("{ParamType}", self.getStrByType(dataTypes, paramType))
+					header = header.replace("{PARAM_TYPE}", self.getStrByType(dataTypes, paramType))
 
 					fileC.write(header)
 				fileC.write("\n")
@@ -165,3 +165,4 @@ class androidAutoPacker:
 		# class end
 		fileC.write("}\n")
 		fileC.close()
+		print "Pack Android API Completed!"

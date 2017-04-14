@@ -9,6 +9,14 @@
 #import "SILManager.h"
 #import "SILAPI.h"
 
+#define DEFAULT_IS_DEBUGGING NO
+
+@interface SILManager ()
+
+@property (nonatomic, strong, readwrite) NSString *serverURL;
+
+@end
+
 @implementation SILManager
 
 + (instancetype)instance
@@ -18,6 +26,7 @@
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
         instance.sessionManager = [SILManager defaultSessionManager];
+        instance.isDebugging = DEFAULT_IS_DEBUGGING;
     });
     return instance;
 }
@@ -37,6 +46,11 @@
     manager.requestSerializer = requestSerializer;
     manager.responseSerializer = responseSerializer;
     return manager;
+}
+
+- (NSString *)serverURL
+{
+    return self.isDebugging ? self.debugServerURL : self.onlineServerURL;
 }
 
 @end

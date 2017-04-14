@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package helloDemo;
+
+option java_package = "com.example.hello";
+option java_outer_classname = "MyHello";
+
+option objc_class_prefix = "SIL";
+
+message HelloRequest
+{
+    optional int64 helloId = 1;
+    optional string helloContent = 2;
+}
+
+message HelloResponse
+{
+    optional int64 helloId = 1;
+    optional string helloContent = 2;
+}
