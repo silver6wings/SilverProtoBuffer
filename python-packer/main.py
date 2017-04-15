@@ -30,23 +30,37 @@ def generateProto(protoName, outputPath, language):
 	os.system("protoc --" + language + "_out=../" + outputPath + " " + protoName + ".proto")
 	os.chdir(currentPath)
 
-def doProtoc(protoName):
+def changeProtoObjcComment(protoName, needObjcPrefix):
+	protoFile = open(os.getcwd() + "/input/" + protoName + ".proto", "r");
+	protoContent = protoFile.read()
+	protoFile.close()
 
+	protoContent = protoContent.replace("// option objc_class_prefix", "option objc_class_prefix");
+	if not needObjcPrefix:	
+		protoContent = protoContent.replace("option objc_class_prefix", "// option objc_class_prefix");	
+
+	protoFile = open(os.getcwd() + "/input/" + protoName + ".proto", "w");
+	protoFile.write(protoContent)
+	protoFile.close()
+
+def doProtocObjc(protoName):
 	os.system("brew unlink protobuf@2.6")
 	os.system("brew link protobuf")
-
+	changeProtoObjcComment(protoName, True)
 	generateProto(protoName, myOutputObjcPath, "objc")
 
+def doProtocJava(protoName):
 	os.system("brew unlink protobuf")
 	os.system("brew link --force protobuf@2.6")
-
+	changeProtoObjcComment(protoName, False)
 	generateProto(protoName, myOutputJavaPath, "java")
 
 def main():	
 	makeDirIfNotExist(myOutputJavaPath)
 	makeDirIfNotExist(myOutputObjcPath)
 	doPack()
-	doProtoc(myProtoName)
+	doProtocObjc(myProtoName)
+	doProtocJava(myProtoName)
 
 if __name__ == '__main__':
 	main()
