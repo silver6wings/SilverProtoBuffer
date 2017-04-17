@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/hello")
-public class HelloController {
+public class MyHelloController {
 
     @RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
     @ResponseBody
