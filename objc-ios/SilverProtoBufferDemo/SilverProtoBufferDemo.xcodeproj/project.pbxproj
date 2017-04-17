@@ -13,9 +13,9 @@
 		4D5AD0961E9F5AC90005EC55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5AD0941E9F5AC90005EC55 /* Main.storyboard */; };
 		4D5AD0981E9F5AC90005EC55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5AD0971E9F5AC90005EC55 /* Assets.xcassets */; };
 		4D5AD09B1E9F5AC90005EC55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5AD0991E9F5AC90005EC55 /* LaunchScreen.storyboard */; };
+		4D695DEF1EA47405007B1605 /* Hello.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D695DEC1EA47405007B1605 /* Hello.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4D695DF01EA47405007B1605 /* SILManager+HelloDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D695DEE1EA47405007B1605 /* SILManager+HelloDemo.m */; };
 		4D939DBB1EA0A49C00B8B99E /* libSILProtobuffer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D939DBA1EA0A49C00B8B99E /* libSILProtobuffer.a */; };
-		4D939DC01EA0A4BA00B8B99E /* Hello.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D939DBD1EA0A4BA00B8B99E /* Hello.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4D939DC11EA0A4BA00B8B99E /* SILManager+HelloDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D939DBF1EA0A4BA00B8B99E /* SILManager+HelloDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +29,11 @@
 		4D5AD0971E9F5AC90005EC55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D5AD09A1E9F5AC90005EC55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D5AD09C1E9F5AC90005EC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D695DEB1EA47405007B1605 /* Hello.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hello.pbobjc.h; sourceTree = "<group>"; };
+		4D695DEC1EA47405007B1605 /* Hello.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.pbobjc.m; sourceTree = "<group>"; };
+		4D695DED1EA47405007B1605 /* SILManager+HelloDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SILManager+HelloDemo.h"; sourceTree = "<group>"; };
+		4D695DEE1EA47405007B1605 /* SILManager+HelloDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SILManager+HelloDemo.m"; sourceTree = "<group>"; };
 		4D939DBA1EA0A49C00B8B99E /* libSILProtobuffer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSILProtobuffer.a; path = "../build/Debug-iphoneos/libSILProtobuffer.a"; sourceTree = "<group>"; };
-		4D939DBC1EA0A4BA00B8B99E /* Hello.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hello.pbobjc.h; sourceTree = "<group>"; };
-		4D939DBD1EA0A4BA00B8B99E /* Hello.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.pbobjc.m; sourceTree = "<group>"; };
-		4D939DBE1EA0A4BA00B8B99E /* SILManager+HelloDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SILManager+HelloDemo.h"; sourceTree = "<group>"; };
-		4D939DBF1EA0A4BA00B8B99E /* SILManager+HelloDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SILManager+HelloDemo.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +72,10 @@
 				4D5AD08F1E9F5AC90005EC55 /* AppDelegate.m */,
 				4D5AD0911E9F5AC90005EC55 /* ViewController.h */,
 				4D5AD0921E9F5AC90005EC55 /* ViewController.m */,
-				4D939DBC1EA0A4BA00B8B99E /* Hello.pbobjc.h */,
-				4D939DBD1EA0A4BA00B8B99E /* Hello.pbobjc.m */,
-				4D939DBE1EA0A4BA00B8B99E /* SILManager+HelloDemo.h */,
-				4D939DBF1EA0A4BA00B8B99E /* SILManager+HelloDemo.m */,
+				4D695DEB1EA47405007B1605 /* Hello.pbobjc.h */,
+				4D695DEC1EA47405007B1605 /* Hello.pbobjc.m */,
+				4D695DED1EA47405007B1605 /* SILManager+HelloDemo.h */,
+				4D695DEE1EA47405007B1605 /* SILManager+HelloDemo.m */,
 				4D5AD0971E9F5AC90005EC55 /* Assets.xcassets */,
 				4D5AD0941E9F5AC90005EC55 /* Main.storyboard */,
 				4D5AD0991E9F5AC90005EC55 /* LaunchScreen.storyboard */,
@@ -174,9 +174,9 @@
 			files = (
 				4D5AD0931E9F5AC90005EC55 /* ViewController.m in Sources */,
 				4D5AD0901E9F5AC90005EC55 /* AppDelegate.m in Sources */,
-				4D939DC11EA0A4BA00B8B99E /* SILManager+HelloDemo.m in Sources */,
+				4D695DF01EA47405007B1605 /* SILManager+HelloDemo.m in Sources */,
 				4D5AD08D1E9F5AC90005EC55 /* main.m in Sources */,
-				4D939DC01EA0A4BA00B8B99E /* Hello.pbobjc.m in Sources */,
+				4D695DEF1EA47405007B1605 /* Hello.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

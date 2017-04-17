@@ -47,13 +47,15 @@ static GPBFileDescriptor *SILHelloRoot_FileDescriptor(void) {
 
 @implementation SILHelloRequest
 
-@dynamic hasHelloId, helloId;
-@dynamic hasHelloContent, helloContent;
+@dynamic hasId_p, id_p;
+@dynamic hasFoo, foo;
+@dynamic hasBar, bar;
 
 typedef struct SILHelloRequest__storage_ {
   uint32_t _has_storage_[1];
-  NSString *helloContent;
-  int64_t helloId;
+  NSString *foo;
+  NSString *bar;
+  int64_t id_p;
 } SILHelloRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -63,21 +65,30 @@ typedef struct SILHelloRequest__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "helloId",
+        .name = "id_p",
         .dataTypeSpecific.className = NULL,
-        .number = SILHelloRequest_FieldNumber_HelloId,
+        .number = SILHelloRequest_FieldNumber_Id_p,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(SILHelloRequest__storage_, helloId),
+        .offset = (uint32_t)offsetof(SILHelloRequest__storage_, id_p),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
-        .name = "helloContent",
+        .name = "foo",
         .dataTypeSpecific.className = NULL,
-        .number = SILHelloRequest_FieldNumber_HelloContent,
+        .number = SILHelloRequest_FieldNumber_Foo,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(SILHelloRequest__storage_, helloContent),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .offset = (uint32_t)offsetof(SILHelloRequest__storage_, foo),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "bar",
+        .dataTypeSpecific.className = NULL,
+        .number = SILHelloRequest_FieldNumber_Bar,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SILHelloRequest__storage_, bar),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
@@ -91,7 +102,7 @@ typedef struct SILHelloRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\007\000\002\014\000";
+        "\001\001\000ID\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -106,13 +117,13 @@ typedef struct SILHelloRequest__storage_ {
 
 @implementation SILHelloResponse
 
-@dynamic hasHelloId, helloId;
-@dynamic hasHelloContent, helloContent;
+@dynamic hasId_p, id_p;
+@dynamic hasContent, content;
 
 typedef struct SILHelloResponse__storage_ {
   uint32_t _has_storage_[1];
-  NSString *helloContent;
-  int64_t helloId;
+  NSString *content;
+  int64_t id_p;
 } SILHelloResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -122,21 +133,21 @@ typedef struct SILHelloResponse__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "helloId",
+        .name = "id_p",
         .dataTypeSpecific.className = NULL,
-        .number = SILHelloResponse_FieldNumber_HelloId,
+        .number = SILHelloResponse_FieldNumber_Id_p,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(SILHelloResponse__storage_, helloId),
+        .offset = (uint32_t)offsetof(SILHelloResponse__storage_, id_p),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
-        .name = "helloContent",
+        .name = "content",
         .dataTypeSpecific.className = NULL,
-        .number = SILHelloResponse_FieldNumber_HelloContent,
+        .number = SILHelloResponse_FieldNumber_Content,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(SILHelloResponse__storage_, helloContent),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .offset = (uint32_t)offsetof(SILHelloResponse__storage_, content),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
@@ -150,7 +161,7 @@ typedef struct SILHelloResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\007\000\002\014\000";
+        "\001\001\000ID\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

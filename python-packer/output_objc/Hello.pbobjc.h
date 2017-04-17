@@ -47,36 +47,41 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - SILHelloRequest
 
 typedef GPB_ENUM(SILHelloRequest_FieldNumber) {
-  SILHelloRequest_FieldNumber_HelloId = 1,
-  SILHelloRequest_FieldNumber_HelloContent = 2,
+  SILHelloRequest_FieldNumber_Id_p = 1,
+  SILHelloRequest_FieldNumber_Foo = 2,
+  SILHelloRequest_FieldNumber_Bar = 3,
 };
 
 @interface SILHelloRequest : GPBMessage
 
-@property(nonatomic, readwrite) int64_t helloId;
+@property(nonatomic, readwrite) int64_t id_p;
 
-@property(nonatomic, readwrite) BOOL hasHelloId;
-@property(nonatomic, readwrite, copy, null_resettable) NSString *helloContent;
-/** Test to see if @c helloContent has been set. */
-@property(nonatomic, readwrite) BOOL hasHelloContent;
+@property(nonatomic, readwrite) BOOL hasId_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *foo;
+/** Test to see if @c foo has been set. */
+@property(nonatomic, readwrite) BOOL hasFoo;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *bar;
+/** Test to see if @c bar has been set. */
+@property(nonatomic, readwrite) BOOL hasBar;
 
 @end
 
 #pragma mark - SILHelloResponse
 
 typedef GPB_ENUM(SILHelloResponse_FieldNumber) {
-  SILHelloResponse_FieldNumber_HelloId = 1,
-  SILHelloResponse_FieldNumber_HelloContent = 2,
+  SILHelloResponse_FieldNumber_Id_p = 1,
+  SILHelloResponse_FieldNumber_Content = 2,
 };
 
 @interface SILHelloResponse : GPBMessage
 
-@property(nonatomic, readwrite) int64_t helloId;
+@property(nonatomic, readwrite) int64_t id_p;
 
-@property(nonatomic, readwrite) BOOL hasHelloId;
-@property(nonatomic, readwrite, copy, null_resettable) NSString *helloContent;
-/** Test to see if @c helloContent has been set. */
-@property(nonatomic, readwrite) BOOL hasHelloContent;
+@property(nonatomic, readwrite) BOOL hasId_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *content;
+/** Test to see if @c content has been set. */
+@property(nonatomic, readwrite) BOOL hasContent;
 
 @end
 
