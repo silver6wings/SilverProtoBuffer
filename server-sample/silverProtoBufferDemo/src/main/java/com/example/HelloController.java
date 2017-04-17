@@ -1,19 +1,33 @@
 package com.example;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/hello")
 public class HelloController {
-    @RequestMapping(value = "", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
     @ResponseBody
-    public Hello.hello printHello() {
-        return Hello.hello.newBuilder()
-                .setHelloId(1)
-                .setHelloName("xx")
+    public MyHello.HelloResponse getHello(
+            @PathVariable("id") Long id,
+            @RequestParam(value = "foo", required = false) Long foo)
+    {
+
+        return MyHello.HelloResponse.newBuilder()
+                .setID(id)
+                .setContent("foo:" + foo)
+                .build();
+    }
+
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    @ResponseBody
+    public MyHello.HelloResponse postHello(
+            @RequestBody MyHello.HelloRequest request)
+    {
+        return MyHello.HelloResponse.newBuilder()
+                .setID(request.getID())
+                .setContent(request.getFoo() + request.getBar())
                 .build();
     }
 }
