@@ -11,7 +11,7 @@ public class HelloController {
     @ResponseBody
     public MyHello.HelloResponse getHello(
             @PathVariable("id") Long id,
-            @RequestParam(value = "foo", required = false) Long foo)
+            @RequestParam(value = "foo", required = false) String foo)
     {
 
         return MyHello.HelloResponse.newBuilder()

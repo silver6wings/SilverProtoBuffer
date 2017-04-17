@@ -12,17 +12,17 @@ public class HelloDemoProvider extends SILDataProvider
 
 	// This is a hello demo get
 	public static void helloGet(Context context, String token, CacheType cacheType,
-		String content, Integer id, 
+		String foo, Integer ID, 
 		HelloDemoProvider.HelloResponseHandler handler)
 	{
-		String URL = serverURL + "/hello?id={id}&content={content}";
-		URL = URL.replace("{content}", content.toString());
-		URL = URL.replace("{id}", id.toString());
+		String URL = serverURL + "/hello/{ID}/get?foo={foo}";
+		URL = URL.replace("{foo}", foo.toString());
+		URL = URL.replace("{ID}", ID.toString());
 		RequestModel requestModel = new RequestModel();
 		requestModel.cacheType = cacheType;
 		requestModel.requestType = RequestType.GET;
 		requestModel.url = URL;
-		requestModel.sensorTag = "helloGet";
+		requestModel.sensorTag = "helloGetTag";
 		ProtoBufferRequester.request(context, token, requestModel, null, Hello.HelloResponse.class, handler);
 	}
 
@@ -31,12 +31,12 @@ public class HelloDemoProvider extends SILDataProvider
 		Hello.HelloRequest.Builder requestBody,
 		HelloDemoProvider.HelloResponseHandler handler)
 	{
-		String URL = serverURL + "/hello";
+		String URL = serverURL + "/hello/post";
 		RequestModel requestModel = new RequestModel();
 		requestModel.cacheType = cacheType;
 		requestModel.requestType = RequestType.POST;
 		requestModel.url = URL;
-		requestModel.sensorTag = "helloPost";
+		requestModel.sensorTag = "helloPostTag";
 		ProtoBufferRequester.request(context, token, requestModel, requestBody, Hello.HelloResponse.class, handler);
 	}
 

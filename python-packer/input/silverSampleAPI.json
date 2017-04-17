@@ -9,22 +9,22 @@
         {
             "introduction" : "This is a hello demo get",
             "api" : "helloGet",
-            "tag" : "helloGet",
+            "tag" : "helloGetTag",
             "method" : "GET",
-            "url" : "/hello?id={id}&content={content}",            
+            "url" : "/hello/{ID}/get?foo={foo}",
             "urlParameter" :
             {
-                "id" : "uint",
-                "content" : "str"
+                "ID" : "uint",
+                "foo" : "str"
             },
             "responseClass" : "HelloResponse"
         },
         {
             "introduction" : "This is a hello demo post",
             "api" : "helloPost",
-            "tag" : "helloPost",
+            "tag" : "helloPostTag",
             "method" : "POST",
-            "url" : "/hello",
+            "url" : "/hello/post",
             "requestClass" : "HelloRequest",
             "responseClass" : "HelloResponse"
         }
