@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.silver6wings.HelloDemoProvider;
+import com.silver6wings.MyHello;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                HelloDemoProvider.helloGet(getApplicationContext(),
+                        "ABC",
+                        123,
+                        new HelloDemoProvider.HelloResponseHandler() {
+                            @Override
+                            public void onResponse(MyHello.HelloResponse response, int responseCode, int httpCode, Throwable throwable) {
+
+                            }
+                        });
             }
         });
     }
