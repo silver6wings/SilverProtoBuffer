@@ -13,3 +13,24 @@
 	        requestModel.sensorTag = "{TAG}";
         	ProtoBufferRequester.request(context, token, requestModel, requestBody, Galaxy.AnnouncementEventAddDTO.class, handler);
 	}
+
+
+	public static void helloGet(Context context,
+		String foo, Integer ID, 
+		HelloDemoProvider.HelloResponseHandler handler)
+	{
+		String URL = serverURL + "/hello/{ID}/get?foo={foo}";
+		URL = URL.replace("{foo}", foo.toString());
+		URL = URL.replace("{ID}", ID.toString());
+
+		SilverProtoRequester.request(
+				SilverProtoManager.getInstance().getClient(),
+				context,
+				SilverProtoManager.RequestMethodGET,
+				"helloGetTag",
+				"URL",
+				null,
+				MyHello.HelloResponse.class,
+				handler
+				);
+	}

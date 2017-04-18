@@ -29,8 +29,8 @@ def main():
 	makeDirIfNotExist(myOutputObjcPath)
 	doPack()
 
-	protoComplier.doProtocObjc(myProtoName, myOutputObjcPath)
-	protoComplier.doProtocJava(myProtoName, myOutputJavaPath)
+	# protoComplier.doProtocObjc(myProtoName, myOutputObjcPath)
+	# protoComplier.doProtocJava(myProtoName, myOutputJavaPath)
 
 if __name__ == '__main__':
 	main()

@@ -2,8 +2,8 @@
     "className" :  "HelloDemo",
     "objcProtoPrefix" : "SIL",
     "objcProtoFile" : "Hello",
-    "javaProtoPackage" : "com.example",
-    "javaProtoClass" : "Hello",
+    "javaProtoPackage" : "com.silver6wings",
+    "javaProtoClass" : "MyHello",
     "apis" : 
     [
         {

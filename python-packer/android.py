@@ -41,7 +41,10 @@ class androidAutoPacker:
 
 	def packToPath(self, outputPath): 
 
+		providerPackage = self.grammarJSON["providerPackage"]
 		providerName = self.grammarJSON["providerName"]
+		protoHandler = self.grammarJSON["protoHandler"]
+		imports = self.grammarJSON["imports"]
 		dataTypes = self.grammarJSON["dataTypes"]
 
 		javaProtoPackage = self.specJSON["javaProtoPackage"]
@@ -67,11 +70,11 @@ class androidAutoPacker:
 		fileC = open("".join([os.getcwd(), "/", outputPath,"/", className, "Provider.java"]), "w")
 
 		# add import
-		fileC.write("package io.dcloud.service.protobuf;\n\n")
+		fileC.write("package " + providerPackage + ";\n\n")
 		fileC.write("import android.content.Context;\n")
-		fileC.write("import io.dcloud.service.protobuf.params.ProtoBufferBaseHandler;\n")
-		fileC.write("import io.dcloud.service.protobuf.params.RequestModel;\n")
-		fileC.write("import io.dcloud.service.protobuf.params.RequestType;\n")
+
+		for i in range(0, len(imports)):
+			fileC.write("import " + imports[i] + ";\n")
 		fileC.write("import " + javaProtoPackage + "." + javaProtoClass + ";\n\n")
 
 		# class begin
@@ -86,7 +89,8 @@ class androidAutoPacker:
 				allResponse.append(api["responseClass"]);
 
 		for i in range(0, len(allResponse)):
-			handler = funcHeaderHandler.replace("{JAVA_PROTO_CLASS}", javaProtoClass)
+			handler = funcHeaderHandler.replace("{PROTO_HANDLER}", protoHandler)
+			handler = handler.replace("{JAVA_PROTO_CLASS}", javaProtoClass)
 			handler = handler.replace("{RESPONSE_CLASS}", allResponse[i])
 			fileC.write(handler)
 		fileC.write("\n")

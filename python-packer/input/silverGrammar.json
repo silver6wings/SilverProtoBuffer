@@ -3,7 +3,7 @@
     [
         {
             "type" : "ios",
-            "providerName" : "SILManager",
+            "providerName" : "SilverProtoBaseProvider",
             "dataTypes" : 
             {
                 "str" : "NSString *",
@@ -21,7 +21,16 @@
         },
         {
             "type" : "android",
-            "providerName" : "SILDataProvider",
+            "providerPackage" : "com.silver6wings",
+            "providerName" : "SilverProtoBaseProvider",
+            "protoHandler" : "SilverProtoHandler",
+            "imports" :
+            [
+                "com.silver6wings.protobuffer.SilverProtoBaseProvider",
+                "com.silver6wings.protobuffer.SilverProtoHandler",
+                "com.silver6wings.protobuffer.SilverProtoManager",
+                "com.silver6wings.protobuffer.SilverProtoRequester"
+            ],            
             "dataTypes" : 
             {
                 "str" : "String",

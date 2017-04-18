@@ -13,8 +13,8 @@ public class HelloDemoProvider extends SilverProtoBaseProvider
 
 	// This is a hello demo get
 	public static void helloGet(Context context,
-		String foo, Integer ID, 
-		HelloDemoProvider.HelloResponseHandler handler)
+								String foo, Integer ID,
+								HelloDemoProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello/{ID}/get?foo={foo}";
 		URL = URL.replace("{foo}", foo.toString());
@@ -28,13 +28,13 @@ public class HelloDemoProvider extends SilverProtoBaseProvider
 				null,
 				MyHello.HelloResponse.class,
 				handler
-				);
+		);
 	}
 
 	// This is a hello demo post
 	public static void helloPost(Context context,
-		MyHello.HelloRequest.Builder requestBody,
-		HelloDemoProvider.HelloResponseHandler handler)
+								 MyHello.HelloRequest.Builder requestBody,
+								 HelloDemoProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello/post";
 		SilverProtoRequester.request(
@@ -46,7 +46,7 @@ public class HelloDemoProvider extends SilverProtoBaseProvider
 				requestBody,
 				MyHello.HelloResponse.class,
 				handler
-				);
+		);
 	}
 
 }

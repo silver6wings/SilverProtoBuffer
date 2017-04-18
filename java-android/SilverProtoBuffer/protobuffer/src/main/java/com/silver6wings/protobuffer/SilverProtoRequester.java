@@ -23,7 +23,7 @@ public class SilverProtoRequester
                                                             final String tag,
                                                             final String url,
                                                             GeneratedMessage.Builder requestBuilder,
-                                                            final Class<T> responseType,
+                                                            final Class responseType,
                                                             final SilverProtoHandler handler)
     {
         if (null == handler)
