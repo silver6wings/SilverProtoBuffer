@@ -1,0 +1,34 @@
+{
+    "grammarList":
+    [
+        {
+            "type" : "ios",
+            "providerName" : "SILManager",
+            "dataTypes" : 
+            {
+                "str" : "NSString *",
+                "int" : "NSInteger",
+                "uint" : "NSUInteger",
+                "long" : "NSInteger"
+            },
+            "dataPlaceHolders" :
+            {
+                "str" : "%@",
+                "int" : "%d",
+                "uint" : "%lu",
+                "long" : "%l"
+            }
+        },
+        {
+            "type" : "android",
+            "providerName" : "SILDataProvider",
+            "dataTypes" : 
+            {
+                "str" : "String",
+                "int" : "Integer",
+                "uint" : "Integer",
+                "long" : "Long"
+            }
+        }
+    ]
+}

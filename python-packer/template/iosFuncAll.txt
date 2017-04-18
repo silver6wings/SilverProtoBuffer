@@ -1,0 +1,14 @@
++ (void){ApiName}WithCompletion:(void (^)({responseClass} *response, SILResponseCode code, NSError *error))handler
+AndRequest:({requestClass} *)request
+And{ParamName}:({ParamType}){ParamName}
+{
+    NSString *URL = [NSString stringWithFormat:@"%@{URL}", [{ProviderName} instance].serverURL];
+    URL = [URL stringByReplacingOccurrencesOfString:@"{{ParamName}}" withString:[NSString stringWithFormat:@"{ParamPlaceholder}", {ParamName}]];
+    [SILRequester requestWithMethod:SILRequestMethod{Method}
+                             andTag:@"{TAG}"
+                             andURL:URL
+                      andGPBMessage:{requestExists}
+                    andResponseType:[{responseClass} class]
+                  completionHandler:handler];
+
+}
