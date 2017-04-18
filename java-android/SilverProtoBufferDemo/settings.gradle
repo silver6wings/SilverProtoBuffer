@@ -1,1 +1,6 @@
 include ':app'
+
+// below is used for import SilverProtoBuffer
+include ':SilverProtoBuffer'
+project(':SilverProtoBuffer').projectDir = new File('../SilverProtoBuffer/')
+include ':SilverProtoBuffer:protobuffer'
