@@ -1,6 +1,8 @@
 package com.silver6wings;
 
 import android.content.Context;
+import android.util.Log;
+
 import com.silver6wings.protobuffer.SilverProtoBaseProvider;
 import com.silver6wings.protobuffer.SilverProtoHandler;
 import com.silver6wings.protobuffer.SilverProtoManager;

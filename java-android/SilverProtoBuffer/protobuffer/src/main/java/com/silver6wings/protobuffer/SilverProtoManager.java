@@ -60,4 +60,9 @@ public class SilverProtoManager
         this.client = client;
     }
 
+    public void setBaseServerURL(String baseServerURL)
+    {
+        SilverProtoBaseProvider.serverURL = baseServerURL;
+    }
+
 }
