@@ -25,29 +25,35 @@ public class MainActivity extends AppCompatActivity {
         String simulatorLocalURL = "http://10.0.2.2:8080";
         SilverProtoManager.getInstance().setBaseServerURL(simulatorLocalURL);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-//                HelloDemoProvider.helloGet(
-//                        getApplicationContext(),
-//                        "ABC",
-//                        123,
-//                        new HelloDemoProvider.HelloResponseHandler() {
-//                            @Override
-//                            public void onResponse(MyHello.HelloResponse response, int responseCode, int httpCode, Throwable throwable) {
-//                                if (responseCode == SilverProtoManager.ResponseCodeSuccess) {
-//                                    Log.i("SilverProtobufferDemo", "Response:" + response.getContent());
-//                                }
-//                                else
-//                                {
-//                                    Log.i("SilverProtobufferDemo", "Response: Not success");
-//
-//                                }
-//                            }
-//                        });
+                HelloDemoProvider.helloGet(
+                        getApplicationContext(),
+                        "ABC",
+                        123,
+                        new HelloDemoProvider.HelloResponseHandler() {
+                            @Override
+                            public void onResponse(MyHello.HelloResponse response, int responseCode, int httpCode, Throwable throwable) {
+                                if (responseCode == SilverProtoManager.ResponseCodeSuccess) {
+                                    Log.i("SilverProtobufferDemo", "Response:" + response.getContent());
+                                }
+                                else
+                                {
+                                    Log.i("SilverProtobufferDemo", "Response: Not success");
+                                }
+                            }
+                        });
 
+            }
+        });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 HelloDemoProvider.helloPost(
                         getApplicationContext(),
                         MyHello.HelloRequest.newBuilder().setBar("asdf").setFoo("qwer").setID(123),
@@ -60,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                                 else
                                 {
                                     Log.i("SilverProtobufferDemo", "Response: Not success");
-
                                 }
                             }
                         }
