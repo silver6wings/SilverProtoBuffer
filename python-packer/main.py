@@ -18,19 +18,15 @@ def makeDirIfNotExist(outputPath):
 	if not (os.path.exists(outputPath) and os.path.isdir(outputPath)):
 		os.makedirs(os.path.abspath(outputPath))
 
-def doPack():
-	ip = iosAutoPacker()
-	ip.pack(myGrammarPath, myInputPath, myOutputObjcPath)
-	ap = androidAutoPacker()
-	ap.pack(myGrammarPath, myInputPath, myOutputJavaPath)
-
 def main():	
 	makeDirIfNotExist(myOutputJavaPath)
 	makeDirIfNotExist(myOutputObjcPath)
-	doPack()
 
-	# protoComplier.doProtocObjc(myProtoName, myOutputObjcPath)
-	# protoComplier.doProtocJava(myProtoName, myOutputJavaPath)
+	iosAutoPacker().pack(myGrammarPath, myInputPath, myOutputObjcPath)
+	androidAutoPacker().pack(myGrammarPath, myInputPath, myOutputJavaPath)
+
+	protoComplier.doProtocObjc(myProtoName, myOutputObjcPath)
+	protoComplier.doProtocJava(myProtoName, myOutputJavaPath)
 
 if __name__ == '__main__':
 	main()

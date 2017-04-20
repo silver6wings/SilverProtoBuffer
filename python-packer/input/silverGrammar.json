@@ -3,7 +3,7 @@
     [
         {
             "type" : "ios",
-            "providerName" : "SilverProtoBaseProvider",
+            "providerName" : "SILManager",
             "dataTypes" : 
             {
                 "str" : "NSString *",
