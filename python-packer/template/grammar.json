@@ -17,27 +17,35 @@
                 "int" : "%d",
                 "uint" : "%lu",
                 "long" : "%l"
-            }
+            },            
+            "importsH" :
+            [
+                "<Foundation/Foundation.h>"
+            ],
+            "importsM" :
+            [
+                "\"SILRequester.h\""
+            ]
         },
         {
             "type" : "android",
             "providerPackage" : "com.silver6wings",
             "providerName" : "SilverProtoBaseProvider",
             "protoHandler" : "SilverProtoHandler",
-            "imports" :
-            [
-                "com.silver6wings.protobuffer.SilverProtoBaseProvider",
-                "com.silver6wings.protobuffer.SilverProtoHandler",
-                "com.silver6wings.protobuffer.SilverProtoManager",
-                "com.silver6wings.protobuffer.SilverProtoRequester"
-            ],            
             "dataTypes" : 
             {
                 "str" : "String",
                 "int" : "Integer",
                 "uint" : "Integer",
                 "long" : "Long"
-            }
+            },
+            "imports" :
+            [
+                "com.silver6wings.protobuffer.SilverProtoBaseProvider",
+                "com.silver6wings.protobuffer.SilverProtoHandler",
+                "com.silver6wings.protobuffer.SilverProtoManager",
+                "com.silver6wings.protobuffer.SilverProtoRequester"
+            ]
         }
     ]
 }

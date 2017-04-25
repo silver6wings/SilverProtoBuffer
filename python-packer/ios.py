@@ -39,6 +39,8 @@ class iosAutoPacker:
 		providerName = self.grammarJSON["providerName"]
 		dataTypes = self.grammarJSON["dataTypes"]
 		dataPlaceHolders = self.grammarJSON["dataPlaceHolders"]
+		importsH = self.grammarJSON["importsH"]
+		importsM = self.grammarJSON["importsM"]
 
 		className = self.specJSON["className"]
 		iosPrefix = self.specJSON["objcProtoPrefix"]
@@ -62,14 +64,18 @@ class iosAutoPacker:
 		fileM = open("".join([os.getcwd(), "/", outputPath, "/", providerName, "+", className,".m"]), "w")
 
 		# class import
-		fileH.write("\n#import <Foundation/Foundation.h>")
-		fileH.write("\n#import \"" + providerName + ".h\"")
-		fileH.write("\n#import \"" + iosProto + ".pbobjc.h\"")
-		fileH.write("\n\n")
+		fileH.write("\n")
+		for i in range(0, len(importsH)):
+			fileH.write("#import " + importsH[i] + "\n")
+		fileH.write("#import \"" + providerName + ".h\"\n")
+		fileH.write("#import \"" + iosProto + ".pbobjc.h\"\n")
+		fileH.write("\n")
 
-		fileM.write("\n#import \"" + providerName + "+" + className + ".h\"")
-		fileM.write("\n#import \"SILRequester.h\"")
-		fileM.write("\n\n")
+		fileM.write("\n")
+		for i in range(0, len(importsM)):
+			fileM.write("#import " + importsM[i] + "\n")
+		fileM.write("#import \"" + providerName + "+" + className + ".h\"\n")
+		fileM.write("\n")
 
 		# class begin
 		fileH.write("@interface " + providerName + " (" + className + ")\n\n")

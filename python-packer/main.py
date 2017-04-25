@@ -8,8 +8,9 @@ from ios import iosAutoPacker
 from android import androidAutoPacker
 from protoc import protoComplier
 
-myGrammarPath = "input/silverGrammar.json"
-myInputPath = "input/silverSampleAPI.json"
+myGrammarPath = "template/grammar.json"
+
+myInputPath = "input/DemoAPI.json"
 myOutputJavaPath = "output_java"
 myOutputObjcPath = "output_objc"
 myProtoName = "Hello"
