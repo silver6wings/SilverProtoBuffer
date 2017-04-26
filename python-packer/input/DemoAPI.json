@@ -24,7 +24,7 @@
             "api" : "helloPost",
             "tag" : "helloPostTag",
             "objcCache" : true,
-            "javaProtoClass" : "common",
+            "javaProtoClass" : "Common",
             "method" : "POST",
             "url" : "/hello/post",            
             "requestClass" : "HelloRequest",

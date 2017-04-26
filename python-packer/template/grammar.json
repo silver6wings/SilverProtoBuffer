@@ -9,15 +9,17 @@
                 "str" : "NSString *",
                 "int" : "NSInteger",
                 "uint" : "NSUInteger",
-                "long" : "NSInteger"
+                "long" : "NSInteger",                
+                "ulong" : "NSUInteger"
             },
             "dataPlaceHolders" :
             {
                 "str" : "%@",
-                "int" : "%d",
+                "int" : "%l",
                 "uint" : "%lu",
-                "long" : "%l"
-            },            
+                "long" : "%l" ,       
+                "ulong" : "%lu"
+            },         
             "importsH" :
             [
                 "<Foundation/Foundation.h>"
@@ -37,7 +39,8 @@
                 "str" : "String",
                 "int" : "Integer",
                 "uint" : "Integer",
-                "long" : "Long"
+                "long" : "Long",                           
+                "ulong" : "Long"
             },
             "imports" :
             [
