@@ -3,6 +3,7 @@
     [SILRequester requestWithMethod:SILRequestMethod{Method}
                              andTag:@"{TAG}"
                              andURL:URL
+                     andCachePolicy:{objcCacheNeed}
                       andGPBMessage:{requestExists}
                     andResponseType:[{responseClass} class]
-                  completionHandler:handler];
+                         completion:handler];

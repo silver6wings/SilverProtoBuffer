@@ -1,3 +1,4 @@
 + (void){ApiName}WithCompletion:(void (^)({responseClass} *response, SILResponseCode code, NSError *error))handler
+AndCachePolicy:(NSURLRequestCachePolicy)policy
 AndRequest:({requestClass} *)request
 And{ParamName}:({ParamType}){ParamName}

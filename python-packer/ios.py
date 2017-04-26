@@ -50,6 +50,7 @@ class iosAutoPacker:
 		# prepare template
 		funcHeader = open(os.getcwd() + "/template" + "/iosFuncHeader.txt")
 		funcHeaderName = funcHeader.readline()
+		funcHeaderCache = funcHeader.readline()
 		funcHeaderRequest = funcHeader.readline()
 		funcHeaderParameter = funcHeader.readline()
 		funcHeader.close()
@@ -101,7 +102,18 @@ class iosAutoPacker:
 			fileM.write(header)
 			nameLength = 8 + len(apiName) + 14
 
-			# add request
+			# add header cache param
+			if api.has_key("objcCache"):
+				header = funcHeaderCache
+
+				for k in range(0, nameLength - 14):
+					fileH.write(" ")
+					fileM.write(" ")	
+
+				fileH.write(header)
+				fileM.write(header)
+
+			# add header request param
 			if api.has_key("requestClass"):
 				header = funcHeaderRequest.replace("{requestClass}", requestClass)
 
@@ -112,7 +124,7 @@ class iosAutoPacker:
 				fileH.write(header)
 				fileM.write(header)
 
-			# add parameter
+			# add header parameter param
 			if (api.has_key("urlParameter")):
 				urlParams = api["urlParameter"];
 
@@ -167,6 +179,12 @@ class iosAutoPacker:
 				body = body.replace("{requestExists}", "request")
 			else:
 				body = body.replace("{requestExists}", "nil")
+
+
+			if api.has_key("objcCache"):
+				body = body.replace("{objcCacheNeed}", "policy")
+			else:
+				body = body.replace("{objcCacheNeed}", "NSURLRequestUseProtocolCachePolicy")
 
 			fileM.write(body)
 			fileM.write("}\n\n")

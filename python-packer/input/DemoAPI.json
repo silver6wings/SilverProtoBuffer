@@ -23,8 +23,10 @@
             "introduction" : "This is a hello demo post",
             "api" : "helloPost",
             "tag" : "helloPostTag",
+            "objcCache" : true,
+            "javaProtoClass" : "common",
             "method" : "POST",
-            "url" : "/hello/post",
+            "url" : "/hello/post",            
             "requestClass" : "HelloRequest",
             "responseClass" : "HelloResponse"
         }
