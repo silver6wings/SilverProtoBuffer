@@ -15,9 +15,9 @@
             "dataPlaceHolders" :
             {
                 "str" : "%@",
-                "int" : "%l",
+                "int" : "%ld",
                 "uint" : "%lu",
-                "long" : "%l" ,       
+                "long" : "%ld" ,       
                 "ulong" : "%lu"
             },         
             "importsH" :
