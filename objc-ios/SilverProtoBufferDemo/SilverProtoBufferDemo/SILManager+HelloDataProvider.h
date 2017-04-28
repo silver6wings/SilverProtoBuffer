@@ -3,7 +3,7 @@
 #import "SILManager.h"
 #import "Hello.pbobjc.h"
 
-@interface SILManager (HelloDemo)
+@interface SILManager (HelloDataProvider)
 
 // This is a hello demo get
 + (void)helloGetWithCompletion:(void (^)(SILHelloResponse *response, SILResponseCode code, NSError *error))handler
@@ -12,7 +12,7 @@
 ;
 // This is a hello demo post
 + (void)helloPostWithCompletion:(void (^)(SILHelloResponse *response, SILResponseCode code, NSError *error))handler
-                     AndCachePolicy:(NSURLRequestCachePolicy)policy
+                 AndCachePolicy:(NSURLRequestCachePolicy)policy
                      AndRequest:(SILHelloRequest *)request
 ;
 @end

@@ -42,7 +42,7 @@ class iosAutoPacker:
 		importsH = self.grammarJSON["importsH"]
 		importsM = self.grammarJSON["importsM"]
 
-		className = self.specJSON["className"]
+		className = self.specJSON["classOutputName"]
 		iosPrefix = self.specJSON["objcProtoPrefix"]
 		iosProto = self.specJSON["objcProtoFile"]
 		apis = self.specJSON["apis"]

@@ -1,5 +1,5 @@
 {
-    "className" :  "HelloDemo",
+    "classOutputName" :  "HelloDataProvider",
     "objcProtoPrefix" : "SIL",
     "objcProtoFile" : "Hello",
     "javaProtoPackage" : "com.silver6wings",

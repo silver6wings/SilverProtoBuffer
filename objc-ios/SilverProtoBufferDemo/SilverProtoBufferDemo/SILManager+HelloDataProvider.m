@@ -1,8 +1,8 @@
 
 #import "SILRequester.h"
-#import "SILManager+HelloDemo.h"
+#import "SILManager+HelloDataProvider.h"
 
-@implementation SILManager (HelloDemo)
+@implementation SILManager (HelloDataProvider)
 
 // This is a hello demo get
 + (void)helloGetWithCompletion:(void (^)(SILHelloResponse *response, SILResponseCode code, NSError *error))handler

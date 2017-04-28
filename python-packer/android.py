@@ -49,8 +49,11 @@ class androidAutoPacker:
 
 		javaProtoPackage = self.specJSON["javaProtoPackage"]
 		javaProtoClass = self.specJSON["javaProtoClass"]
+		
+		if self.specJSON.has_key("javaProviderExtend"):
+			providerName = self.specJSON["javaProviderExtend"]		
 
-		className = self.specJSON["className"]
+		className = self.specJSON["classOutputName"]
 		apis = self.specJSON["apis"]
 		# prepare template
 		funcHeader = open(os.getcwd() + "/template" + "/androidFuncHeader.txt")
@@ -78,7 +81,7 @@ class androidAutoPacker:
 		fileC.write("import " + javaProtoPackage + "." + javaProtoClass + ";\n\n")
 
 		# class begin
-		fileC.write("public class " + className + "Provider extends " + providerName + "\n")
+		fileC.write("public class " + className + " extends " + providerName + "\n")
 		fileC.write("{\n")
 
 		# every handler
