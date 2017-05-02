@@ -2,4 +2,4 @@
 	public static void {API_NAME}(Context context,
 		{PARAM_TYPE} {PARAM_NAME}, 
 		{JAVA_PROTO_CLASS}.{REQUEST_CLASS}.Builder requestBody,
-		{CLASS_NAME}Provider.{RESPONSE_CLASS}Handler handler)
+		{CLASS_NAME}.{RESPONSE_CLASS}Handler handler)
