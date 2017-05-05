@@ -14,7 +14,7 @@ public class HelloDataProvider extends SilverProtoBaseProvider
 	// This is a hello demo get
 	public static void helloGet(Context context,
 		String foo, Integer ID, 
-		HelloDataProviderProvider.HelloResponseHandler handler)
+		HelloDataProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello/{ID}/get?foo={foo}";
 		URL = URL.replace("{foo}", foo.toString());
@@ -34,7 +34,7 @@ public class HelloDataProvider extends SilverProtoBaseProvider
 	// This is a hello demo post
 	public static void helloPost(Context context,
 		MyHello.HelloRequest.Builder requestBody,
-		HelloDataProviderProvider.HelloResponseHandler handler)
+		HelloDataProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello/post";
 		SilverProtoRequester.request(

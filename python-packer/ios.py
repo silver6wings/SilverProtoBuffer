@@ -96,8 +96,8 @@ class iosAutoPacker:
 			fileM.write("// " + api["introduction"] + "\n")
 
 			# add apiName and completion handler
-			header = funcHeaderName.replace("{ApiName}", apiName)
-			header = header.replace("{responseClass}", responseClass)
+			header = funcHeaderName.replace("{API_NAME}", apiName)
+			header = header.replace("{RESPONSE_CLASS}", responseClass)
 			fileH.write(header)
 			fileM.write(header)
 			nameLength = 8 + len(apiName) + 14
@@ -115,7 +115,7 @@ class iosAutoPacker:
 
 			# add header request param
 			if api.has_key("requestClass"):
-				header = funcHeaderRequest.replace("{requestClass}", requestClass)
+				header = funcHeaderRequest.replace("{REQUEST_CLASS}", requestClass)
 
 				for k in range(0, nameLength - 10):
 					fileH.write(" ")
@@ -130,11 +130,11 @@ class iosAutoPacker:
 
 				for paramName in urlParams.keys():
 					paramType = urlParams[paramName]
-					header = funcHeaderParameter.replace("{ParamName}", paramName[0].upper() + paramName[1:], 1)
-					header = header.replace("{ParamName}", paramName, 1)
+					header = funcHeaderParameter.replace("{PARAM_NAME}", paramName[0].upper() + paramName[1:], 1)
+					header = header.replace("{PARAM_NAME}", paramName, 1)
 
 					if dataTypes.has_key(paramType):					
-						header = header.replace("{ParamType}", dataTypes[paramType])					
+						header = header.replace("{PARAM_TYPE}", dataTypes[paramType])					
 					else:										
 						print "ERROR: can't find data type in JSON"
 					
@@ -151,7 +151,7 @@ class iosAutoPacker:
 
 			# add URL generation
 			body = funcBodyURL.replace("{URL}", api["url"])
-			body = body.replace("{ProviderName}", providerName)
+			body = body.replace("{PROVIDER_NAME}", providerName)
 			fileM.write(body)
 
 			# add URL parameter
@@ -161,30 +161,30 @@ class iosAutoPacker:
 				for paramName in urlParams.keys():
 					paramType = urlParams[paramName]
 
-					body = funcBodyParam.replace("{ParamName}", paramName)
+					body = funcBodyParam.replace("{PARAM_NAME}", paramName)
 
 					if dataPlaceHolders.has_key(paramType):					
-						body = body.replace("{ParamPlaceholder}", dataPlaceHolders[paramType])					
+						body = body.replace("{PARAM_PLACEHOLDER}", dataPlaceHolders[paramType])					
 					else:										
 						print "ERROR: can't find data type in JSON"
 
 					fileM.write(body)
 
 			# add Request method
-			body = funcBodyRequest.replace("{Method}", api["method"])
+			body = funcBodyRequest.replace("{METHOD}", api["method"])
 			body = body.replace("{TAG}", api["tag"])
-			body = body.replace("{responseClass}", responseClass)
+			body = body.replace("{RESPONSE_CLASS}", responseClass)
 
 			if api.has_key("requestClass"):
-				body = body.replace("{requestExists}", "request")
+				body = body.replace("{REQUEST_EXISTS}", "request")
 			else:
-				body = body.replace("{requestExists}", "nil")
+				body = body.replace("{REQUEST_EXISTS}", "nil")
 
 
 			if api.has_key("objcCache"):
-				body = body.replace("{objcCacheNeed}", "policy")
+				body = body.replace("{OBJC_CACHE_NEED}", "policy")
 			else:
-				body = body.replace("{objcCacheNeed}", "NSURLRequestUseProtocolCachePolicy")
+				body = body.replace("{OBJC_CACHE_NEED}", "NSURLRequestUseProtocolCachePolicy")
 
 			fileM.write(body)
 			fileM.write("}\n\n")
