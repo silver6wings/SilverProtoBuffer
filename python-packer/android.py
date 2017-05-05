@@ -70,7 +70,7 @@ class androidAutoPacker:
 		funcBodyRequest = funcBody.read()
 		funcBody.close()
 
-		fileC = open("".join([os.getcwd(), "/", outputPath,"/", className, "Provider.java"]), "w")
+		fileC = open("".join([os.getcwd(), "/", outputPath,"/", className, ".java"]), "w")
 
 		# add import
 		fileC.write("package " + providerPackage + ";\n\n")

@@ -1,22 +1,20 @@
 package com.silver6wings;
 
 import android.content.Context;
-import android.util.Log;
-
 import com.silver6wings.protobuffer.SilverProtoBaseProvider;
 import com.silver6wings.protobuffer.SilverProtoHandler;
 import com.silver6wings.protobuffer.SilverProtoManager;
 import com.silver6wings.protobuffer.SilverProtoRequester;
 import com.silver6wings.MyHello;
 
-public class HelloDemoProvider extends SilverProtoBaseProvider
+public class HelloDataProvider extends SilverProtoBaseProvider
 {
-	public static interface HelloResponseHandler extends SilverProtoHandler <MyHello.HelloResponse> {}
+	public interface HelloResponseHandler extends SilverProtoHandler <MyHello.HelloResponse> {}
 
 	// This is a hello demo get
 	public static void helloGet(Context context,
 								String foo, Integer ID,
-								HelloDemoProvider.HelloResponseHandler handler)
+								HelloDataProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello/{ID}/get?foo={foo}";
 		URL = URL.replace("{foo}", foo.toString());
@@ -36,7 +34,7 @@ public class HelloDemoProvider extends SilverProtoBaseProvider
 	// This is a hello demo post
 	public static void helloPost(Context context,
 								 MyHello.HelloRequest.Builder requestBody,
-								 HelloDemoProvider.HelloResponseHandler handler)
+								 HelloDataProvider.HelloResponseHandler handler)
 	{
 		String URL = serverURL + "/hello/post";
 		SilverProtoRequester.request(

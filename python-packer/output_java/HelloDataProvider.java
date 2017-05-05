@@ -9,7 +9,7 @@ import com.silver6wings.MyHello;
 
 public class HelloDataProvider extends SilverProtoBaseProvider
 {
-	public static interface HelloResponseHandler extends SilverProtoHandler <MyHello.HelloResponse> {}
+	public interface HelloResponseHandler extends SilverProtoHandler <MyHello.HelloResponse> {}
 
 	// This is a hello demo get
 	public static void helloGet(Context context,

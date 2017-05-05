@@ -1,4 +1,4 @@
-	public static interface {RESPONSE_CLASS}Handler extends {PROTO_HANDLER} <{JAVA_PROTO_CLASS}.{RESPONSE_CLASS}> {}
+	public interface {RESPONSE_CLASS}Handler extends {PROTO_HANDLER} <{JAVA_PROTO_CLASS}.{RESPONSE_CLASS}> {}
 	public static void {API_NAME}(Context context,
 		{PARAM_TYPE} {PARAM_NAME}, 
 		{JAVA_PROTO_CLASS}.{REQUEST_CLASS}.Builder requestBody,
