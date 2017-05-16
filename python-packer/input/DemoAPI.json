@@ -1,0 +1,34 @@
+{
+    "classOutputName" :  "HelloDataProvider",
+    "objcProtoPrefix" : "SIL",
+    "objcProtoFile" : "Hello",
+    "javaProtoPackage" : "com.silver6wings",
+    "javaProtoClass" : "MyHello",
+    "apis" : 
+    [
+        {
+            "introduction" : "This is a hello demo get",
+            "api" : "helloGet",
+            "tag" : "helloGetTag",
+            "method" : "GET",
+            "url" : "/hello/{ID}/get?foo={foo}",
+            "urlParameter" :
+            {
+                "ID" : "uint",
+                "foo" : "str"
+            },
+            "responseClass" : "HelloResponse"
+        },
+        {
+            "introduction" : "This is a hello demo post",
+            "api" : "helloPost",
+            "tag" : "helloPostTag",
+            "objcCache" : true,
+            "javaProtoClass" : "Common",
+            "method" : "POST",
+            "url" : "/hello/post",            
+            "requestClass" : "HelloRequest",
+            "responseClass" : "HelloResponse"
+        }
+    ]
+}

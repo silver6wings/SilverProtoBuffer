@@ -1,8 +1,9 @@
-    NSString *URL = [NSString stringWithFormat:@"%@{URL}", [{ProviderName} instance].serverURL];
-    URL = [URL stringByReplacingOccurrencesOfString:@"{{ParamName}}" withString:[NSString stringWithFormat:@"{ParamPlaceholder}", {ParamName}]];
-    [SILRequester requestWithMethod:SILRequestMethod{Method}
+    NSString *URL = [NSString stringWithFormat:@"%@{URL}", [{PROVIDER_NAME} instance].serverURL];
+    URL = [URL stringByReplacingOccurrencesOfString:@"{{PARAM_NAME}}" withString:[NSString stringWithFormat:@"{PARAM_PLACEHOLDER}", {PARAM_NAME}]];
+    [SILRequester requestWithMethod:SILRequestMethod{METHOD}
                              andTag:@"{TAG}"
                              andURL:URL
-                      andGPBMessage:{requestExists}
-                    andResponseType:[{responseClass} class]
-                  completionHandler:handler];
+                     andCachePolicy:{OBJC_CACHE_NEED}
+                      andGPBMessage:{REQUEST_EXISTS}
+                    andResponseType:[{RESPONSE_CLASS} class]
+                         completion:handler];

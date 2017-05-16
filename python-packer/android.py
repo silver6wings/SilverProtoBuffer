@@ -41,13 +41,19 @@ class androidAutoPacker:
 
 	def packToPath(self, outputPath): 
 
+		providerPackage = self.grammarJSON["providerPackage"]
 		providerName = self.grammarJSON["providerName"]
+		protoHandler = self.grammarJSON["protoHandler"]
+		imports = self.grammarJSON["imports"]
 		dataTypes = self.grammarJSON["dataTypes"]
 
 		javaProtoPackage = self.specJSON["javaProtoPackage"]
 		javaProtoClass = self.specJSON["javaProtoClass"]
+		
+		if self.specJSON.has_key("javaProviderExtend"):
+			providerName = self.specJSON["javaProviderExtend"]		
 
-		className = self.specJSON["className"]
+		className = self.specJSON["classOutputName"]
 		apis = self.specJSON["apis"]
 		# prepare template
 		funcHeader = open(os.getcwd() + "/template" + "/androidFuncHeader.txt")
@@ -64,18 +70,18 @@ class androidAutoPacker:
 		funcBodyRequest = funcBody.read()
 		funcBody.close()
 
-		fileC = open("".join([os.getcwd(), "/", outputPath,"/", className, "Provider.java"]), "w")
+		fileC = open("".join([os.getcwd(), "/", outputPath,"/", className, ".java"]), "w")
 
 		# add import
-		fileC.write("package io.dcloud.service.protobuf;\n\n")
+		fileC.write("package " + providerPackage + ";\n\n")
 		fileC.write("import android.content.Context;\n")
-		fileC.write("import io.dcloud.service.protobuf.params.ProtoBufferBaseHandler;\n")
-		fileC.write("import io.dcloud.service.protobuf.params.RequestModel;\n")
-		fileC.write("import io.dcloud.service.protobuf.params.RequestType;\n")
+
+		for i in range(0, len(imports)):
+			fileC.write("import " + imports[i] + ";\n")
 		fileC.write("import " + javaProtoPackage + "." + javaProtoClass + ";\n\n")
 
 		# class begin
-		fileC.write("public class " + className + "Provider extends " + providerName + "\n")
+		fileC.write("public class " + className + " extends " + providerName + "\n")
 		fileC.write("{\n")
 
 		# every handler
@@ -86,7 +92,8 @@ class androidAutoPacker:
 				allResponse.append(api["responseClass"]);
 
 		for i in range(0, len(allResponse)):
-			handler = funcHeaderHandler.replace("{JAVA_PROTO_CLASS}", javaProtoClass)
+			handler = funcHeaderHandler.replace("{PROTO_HANDLER}", protoHandler)
+			handler = handler.replace("{JAVA_PROTO_CLASS}", javaProtoClass)
 			handler = handler.replace("{RESPONSE_CLASS}", allResponse[i])
 			fileC.write(handler)
 		fileC.write("\n")

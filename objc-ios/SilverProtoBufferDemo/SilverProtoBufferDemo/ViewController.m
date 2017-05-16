@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SILProtoBuffer.h"
-#import "SILManager+HelloDemo.h"
+#import "SILManager+HelloDataProvider.h"
 
 @interface ViewController ()
 
@@ -69,7 +69,9 @@
              NSLog(@"content:%@", response.content);
          }
      }
-                             AndRequest:helloRequest];
+                         AndCachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                             AndRequest:helloRequest
+     ];
 }
 
 - (void)didReceiveMemoryWarning

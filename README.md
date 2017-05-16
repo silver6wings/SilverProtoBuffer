@@ -5,6 +5,13 @@ Google Protocol Buffer v2.6 API auto packer
 ## Background
 TODO
 
+## Benefit
+Using AFNetworking call API:
+
+Using SILManager:
+
+Using Python-packer:
+
 ## How to use:
 
 - Step 1: Prepared the .json file which contains the API spec definition and the related .proto files which contains the protobuf messages that API spec needs and put all of them into /python-packer/input.

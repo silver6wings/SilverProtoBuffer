@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package helloDemo;
 
-option java_package = "com.example";
+option java_package = "com.silver6wings";
 option java_outer_classname = "MyHello";
 
 // option objc_class_prefix = "SIL";

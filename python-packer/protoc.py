@@ -21,11 +21,11 @@ class protoComplier:
 
 	@staticmethod
 	def generateProto(protoName, outputPath, language):
-		print "Protobuf File :" + protoName
 		currentPath = os.getcwd()
 		os.chdir(os.getcwd() + "/input")
 		os.system("protoc --" + language + "_out=../" + outputPath + " " + protoName + ".proto")
 		os.chdir(currentPath)
+		print "=== Complete " + language + " Protobuf File : " + protoName + " ==="
 
 	@staticmethod
 	def changeProtoObjcComment(protoName, needObjcPrefix):
