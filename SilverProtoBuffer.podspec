@@ -4,10 +4,10 @@
 Pod::Spec.new do |s|
 
     s.name         = "SilverProtoBuffer"
-    s.version      = "1.0.3"
+    s.version      = "1.0.4"
     s.summary      = "A networking framework based on Google Protobuf v2.6 & AFNetworking that can help you pack APIs"
     s.cocoapods_version = '>= 1.0'
-    s.homepage     = "https://github.com/silver6wings/SILProtoBuffer"
+    s.homepage     = "https://github.com/silver6wings/SilverProtoBuffer"
     s.license      = "MIT"
     s.author       = { "silver6wings" => "silver6wings@126.com" }
     s.platform     = :ios,'8.0'
@@ -21,8 +21,11 @@ Pod::Spec.new do |s|
                         'objc-ios/SILProtobuffer/SILAPI.h',
                         'objc-ios/SILProtobuffer/SILManager.{h,m}',
                         'objc-ios/SILProtobuffer/SILParser.{h,m}',
-                        'objc-ios/SILProtobuffer/SILRequester.{h,m}',
-                        'objc-ios/AFNetworking/*.{h,m}'
+                        'objc-ios/SILProtobuffer/SILRequester.{h,m}'
+
+    s.subspec 'AFNetworking+Silver' do |ss|
+        ss.source_files = 'objc-ios/AFNetworking/*.{h,m}'                        
+    end
 
     s.subspec 'Protobuf260' do |ss|
 
