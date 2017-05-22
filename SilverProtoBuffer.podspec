@@ -1,7 +1,9 @@
+# passed validation using command below:
+# pod spec lint --verbose --allow-warnings
 
 Pod::Spec.new do |s|
 
-    s.name         = "SILProtoBuffer"
+    s.name         = "SilverProtoBuffer"
     s.version      = "1.0.3"
     s.summary      = "A networking framework based on Google Protobuf v2.6 & AFNetworking that can help you pack APIs"
     s.cocoapods_version = '>= 1.0'
@@ -13,19 +15,14 @@ Pod::Spec.new do |s|
     s.source       = { :git => "https://github.com/silver6wings/SILProtobuffer.git",
                        :tag => "#{s.version}" }
 
-    s.subspec 'SILProtobuffer' do |ss|
-        s.requires_arc = true
-        s.source_files    = 'objc-ios/SILProtobuffer/SILProtobuffer.h',
-                            'objc-ios/SILProtobuffer/SILAPI.h',
-                            'objc-ios/SILProtobuffer/SILManager.{h,m}',
-                            'objc-ios/SILProtobuffer/SILParser.{h,m}',
-                            'objc-ios/SILProtobuffer/SILRequester.{h,m}'
-    end
+    s.requires_arc = true
 
-    s.subspec 'SilverAFNetworking' do |ss|
-        ss.requires_arc = true
-        ss.source_files = 'objc-ios/AFNetworking/*.{h,m}'
-    end
+    s.source_files    = 'objc-ios/SILProtobuffer/SILProtobuffer.h',
+                        'objc-ios/SILProtobuffer/SILAPI.h',
+                        'objc-ios/SILProtobuffer/SILManager.{h,m}',
+                        'objc-ios/SILProtobuffer/SILParser.{h,m}',
+                        'objc-ios/SILProtobuffer/SILRequester.{h,m}',
+                        'objc-ios/AFNetworking/*.{h,m}'
 
     s.subspec 'Protobuf260' do |ss|
 
