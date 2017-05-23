@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.author       = { "silver6wings" => "silver6wings@126.com" }
     s.platform     = :ios,'8.0'
 
-    s.source       = { :git => "https://github.com/silver6wings/SILProtobuffer.git",
+    s.source       = { :git => "https://github.com/silver6wings/SilverProtobuffer.git",
                        :tag => "#{s.version}" }
 
     s.requires_arc = true
