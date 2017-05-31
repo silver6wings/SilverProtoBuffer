@@ -1,10 +1,10 @@
 # passed validation using command below:
-# pod spec lint --verbose --allow-warnings
+# pod spec lint SILProtoBuffer.podspec --verbose --allow-warnings
 
 Pod::Spec.new do |s|
 
-    s.name         = "SilverProtoBuffer"
-    s.version      = "1.0.4"
+    s.name         = "SILProtoBuffer"
+    s.version      = "1.0.5"
     s.summary      = "A networking framework based on Google Protobuf v2.6 & AFNetworking that can help you pack APIs"
     s.cocoapods_version = '>= 1.0'
     s.homepage     = "https://github.com/silver6wings/SilverProtoBuffer"
