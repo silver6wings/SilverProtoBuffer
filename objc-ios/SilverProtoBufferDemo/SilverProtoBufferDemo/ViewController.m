@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SILProtoBuffer.h"
+#import "SILProtobuffer.h"
 #import "SILManager+HelloDataProvider.h"
 
 @interface ViewController ()

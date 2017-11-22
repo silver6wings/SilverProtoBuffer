@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../SilverProtoBuffer/SilverProtoBuffer.iml" filepath="$PROJECT_DIR$/../SilverProtoBuffer/SilverProtoBuffer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SilverProtoBuffer/SilverProtoBuffer.iml" filepath="$PROJECT_DIR$/../SilverProtoBuffer/SilverProtoBuffer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SilverProtoBufferDemo.iml" filepath="$PROJECT_DIR$/SilverProtoBufferDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SilverProtoBufferDemo.iml" filepath="$PROJECT_DIR$/SilverProtoBufferDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SilverProtoBuffer/protobuffer/protobuffer.iml" filepath="$PROJECT_DIR$/../SilverProtoBuffer/protobuffer/protobuffer.iml" />
       <module fileurl="file://$PROJECT_DIR$/../SilverProtoBuffer/protobuffer/protobuffer.iml" filepath="$PROJECT_DIR$/../SilverProtoBuffer/protobuffer/protobuffer.iml" />
     </modules>
   </component>

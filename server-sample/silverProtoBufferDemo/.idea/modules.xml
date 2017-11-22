@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/silverProtoBufferDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/silverProtoBufferDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/silverProtoBufferDemo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/silverProtoBufferDemo_main.iml" group="silverProtoBufferDemo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/silverProtoBufferDemo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/silverProtoBufferDemo_test.iml" group="silverProtoBufferDemo" />
     </modules>
   </component>
 </project>
